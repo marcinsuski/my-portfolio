@@ -1,1 +1,208 @@
-/*# sourceMappingURL=styles.css.map */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slide {
+  to {
+    width: 100%;
+  }
+}
+body {
+  width: 100vw;
+  font-size: 100%;
+  font-family: "Roboto", sans-serif;
+  background-color: hsl(218deg, 76%, 10%);
+  color: hsl(255deg, 100%, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  border: 1px solid white;
+  width: 80%;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  padding-top: 1rem;
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: space-between;
+  background: hsl(218deg, 76%, 10%);
+  color: hsl(178deg, 100%, 88%);
+}
+header .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+}
+header .menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding-right: 3rem;
+  width: 80%;
+}
+header .menu ul {
+  height: 100%;
+  display: flex;
+  gap: 3rem;
+}
+header .menu li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 1rem;
+  list-style: none;
+  border-bottom: none;
+  overflow: hidden;
+}
+header .menu li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: hsl(178deg, 100%, 88%);
+  border-radius: 10px;
+  transition: all 300ms;
+  z-index: -1;
+  transform: translateX(-101%);
+}
+header .menu li:hover::after {
+  transform: translateX(0);
+}
+header .menu li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section.main {
+  background: hsl(218deg, 76%, 10%);
+  color: hsl(178deg, 100%, 88%);
+}
+section.main .main-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+section.tools {
+  background: hsl(218deg, 75%, 27%);
+  color: hsl(255deg, 100%, 100%);
+}
+
+section.projects {
+  background: hsl(218deg, 76%, 10%);
+  color: hsl(255deg, 100%, 100%);
+}
+
+section.contact {
+  background: hsl(218deg, 75%, 27%);
+  color: hsl(255deg, 100%, 100%);
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100vh;
+}
+
+.welcome {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
+  color: hsl(178deg, 100%, 88%);
+}
+.welcome h1 {
+  font-size: clamp(1rem, 3vw + 0.8rem, 2.2rem);
+  font-family: "Roboto Mono", monospace;
+  font-weight: 500;
+  position: relative;
+  width: max-content;
+  margin-bottom: 1rem;
+}
+.welcome h1::before, .welcome h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.welcome h1::before {
+  background: hsl(218deg, 76%, 10%);
+  animation: typewriter 6s steps(21) 1s forwards;
+}
+.welcome h1::after {
+  width: 0.125em;
+  background-color: hsl(255deg, 100%, 100%);
+  animation: typewriter 6s steps(21) 1s forwards, blink 750ms steps(21) infinite;
+}
+.welcome .subtitle {
+  font-size: clamp(0.6rem, 3vw + 0.5rem, 1.3rem);
+  position: relative;
+  opacity: 0;
+  transform: translateX(-3rem);
+  animation: fadeInRight 2s ease 7s forwards;
+  margin-bottom: 2rem;
+}
+.welcome button {
+  width: 10rem;
+  height: 3rem;
+  font-size: 1rem;
+  border: 1px solid;
+  border-radius: 10px;
+  background-color: transparent;
+  color: rgb(255, 128, 31);
+  font-weight: 500;
+}
+.welcome button:hover, .welcome button.active {
+  background-color: hsla(178deg, 100%, 88%, 0.2);
+  font-weight: 500;
+}
+
+footer {
+  background: hsl(218deg, 76%, 10%);
+  color: hsl(255deg, 100%, 100%);
+}/*# sourceMappingURL=styles.css.map */

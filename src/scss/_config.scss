@@ -1,19 +1,18 @@
-$orange: hsl(26, 100%, 55%);
+$bg-color: hsl(218, 76%, 10%);
+
 $pale-orange: hsl(25, 100%, 94%);
 $grayish-blue: hsl(220, 14%, 75%);
-$text-header: hsl(220, 13%, 13%);
-$text-primary: hsl(219, 9%, 45%);
-$light-gray: hsl(223, 64%, 98%);
-$white: hsl(0, 0%, 100%);
-$overlay-bg: hsla(0, 0%, 0%, 0.75);
-$black: hsl(0, 0%, 0%);
-
+$text-header: hsl(178, 100%, 88%);
+$text-header-opacity: hsla(178, 100%, 88%, 0.2);
+$text-primary: hsl(255,100%, 100%);
+$button: rgb(255, 128, 31);
+$typewriterSpeed: 6s;
+$typewriterCharacters: 21;
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
- 
 }
 
 
