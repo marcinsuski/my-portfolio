@@ -1,0 +1,31 @@
+$orange: hsl(26, 100%, 55%);
+$pale-orange: hsl(25, 100%, 94%);
+$grayish-blue: hsl(220, 14%, 75%);
+$text-header: hsl(220, 13%, 13%);
+$text-primary: hsl(219, 9%, 45%);
+$light-gray: hsl(223, 64%, 98%);
+$white: hsl(0, 0%, 100%);
+$overlay-bg: hsla(0, 0%, 0%, 0.75);
+$black: hsl(0, 0%, 0%);
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+ 
+}
+
+
+
+@mixin media-md {
+    @media screen and (min-width: 640px) {
+        @content;
+    }
+}
+
+@mixin media-lg {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
