@@ -30,11 +30,12 @@ body {
   height: 100%;
   font-family: "Poppins", sans-serif;
   font-size: 100%;
-  background: url("../src/images/iStock-1320467133.svg");
+  background: url("../src/images/background-hexagon.svg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  backdrop-filter: brightness(60%);
   color: hsl(193deg, 100%, 78%);
   display: flex;
   flex-direction: column;
@@ -43,7 +44,6 @@ body {
 }
 
 .wrapper {
-  border: 1px solid white;
   width: 80%;
 }
 
@@ -187,14 +187,15 @@ section.contact {
   font-size: 1rem;
   border: 2px solid;
   border-radius: 50px;
-  background-color: hsla(0deg, 0%, 0%, 0.6);
-  filter: blur(5);
+  background-color: hsla(0deg, 0%, 0%, 0.3);
+  backdrop-filter: blur(4px);
   color: hsl(164deg, 95%, 43%);
   transition: ease 0.3s;
   font-weight: 500;
 }
 .welcome button:hover, .welcome button.active {
   background-color: hsla(164deg, 95%, 43%, 0.1);
+  backdrop-filter: blur(4px);
   font-weight: 500;
 }
 
