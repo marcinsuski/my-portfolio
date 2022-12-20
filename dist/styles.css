@@ -27,10 +27,15 @@
 }
 body {
   width: 100vw;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
   font-size: 100%;
-  font-family: "Roboto", sans-serif;
-  background-color: hsl(218deg, 76%, 10%);
-  color: hsl(255deg, 100%, 100%);
+  background: url("../src/images/iStock-1320467133.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: hsl(193deg, 100%, 78%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,7 +51,6 @@ section {
   width: 100%;
   height: 100vh;
   font-family: "Poppins", sans-serif;
-  font-family: "Roboto", sans-serif;
 }
 
 header {
@@ -55,8 +59,7 @@ header {
   height: 3rem;
   display: flex;
   align-items: space-between;
-  background: hsl(218deg, 76%, 10%);
-  color: hsl(178deg, 100%, 88%);
+  color: hsl(0deg, 0%, 100%);
 }
 header .logo {
   display: flex;
@@ -95,7 +98,6 @@ header .menu li::after {
   bottom: 0;
   width: 100%;
   height: 2px;
-  background-color: hsl(178deg, 100%, 88%);
   border-radius: 10px;
   transition: all 300ms;
   z-index: -1;
@@ -110,8 +112,7 @@ header .menu li a {
 }
 
 section.main {
-  background: hsl(218deg, 76%, 10%);
-  color: hsl(178deg, 100%, 88%);
+  color: hsl(0deg, 0%, 100%);
 }
 section.main .main-wrapper {
   width: 100%;
@@ -121,18 +122,15 @@ section.main .main-wrapper {
 }
 
 section.tools {
-  background: hsl(218deg, 75%, 27%);
-  color: hsl(255deg, 100%, 100%);
+  color: hsl(193deg, 100%, 78%);
 }
 
 section.projects {
-  background: hsl(218deg, 76%, 10%);
-  color: hsl(255deg, 100%, 100%);
+  color: hsl(193deg, 100%, 78%);
 }
 
 section.contact {
-  background: hsl(218deg, 75%, 27%);
-  color: hsl(255deg, 100%, 100%);
+  color: hsl(193deg, 100%, 78%);
 }
 
 .hero {
@@ -151,12 +149,10 @@ section.contact {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-family: "Roboto Mono", monospace;
-  color: hsl(178deg, 100%, 88%);
+  color: hsl(0deg, 0%, 100%);
 }
 .welcome h1 {
   font-size: clamp(1rem, 3vw + 0.8rem, 2.2rem);
-  font-family: "Roboto Mono", monospace;
   font-weight: 500;
   position: relative;
   width: max-content;
@@ -171,12 +167,10 @@ section.contact {
   left: 0;
 }
 .welcome h1::before {
-  background: hsl(218deg, 76%, 10%);
   animation: typewriter 6s steps(21) 1s forwards;
 }
 .welcome h1::after {
   width: 0.125em;
-  background-color: hsl(255deg, 100%, 100%);
   animation: typewriter 6s steps(21) 1s forwards, blink 750ms steps(21) infinite;
 }
 .welcome .subtitle {
@@ -191,18 +185,19 @@ section.contact {
   width: 10rem;
   height: 3rem;
   font-size: 1rem;
-  border: 1px solid;
-  border-radius: 10px;
-  background-color: transparent;
-  color: rgb(255, 128, 31);
+  border: 2px solid;
+  border-radius: 50px;
+  background-color: hsla(0deg, 0%, 0%, 0.6);
+  filter: blur(5);
+  color: hsl(164deg, 95%, 43%);
+  transition: ease 0.3s;
   font-weight: 500;
 }
 .welcome button:hover, .welcome button.active {
-  background-color: hsla(178deg, 100%, 88%, 0.2);
+  background-color: hsla(164deg, 95%, 43%, 0.1);
   font-weight: 500;
 }
 
 footer {
-  background: hsl(218deg, 76%, 10%);
-  color: hsl(255deg, 100%, 100%);
+  color: hsl(193deg, 100%, 78%);
 }/*# sourceMappingURL=styles.css.map */

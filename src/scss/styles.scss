@@ -27,10 +27,15 @@
 
 body {
     width: 100vw;
-    // font-family: "Poppins", sans-serif;
+    height: 100%;
+    font-family: "Poppins", sans-serif;
     font-size: 100%;
-    font-family: "Roboto", sans-serif;
-    background-color: $bg-color;
+
+    background: url('../src/images/iStock-1320467133.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     color: $text-primary;
     display: flex;
     flex-direction: column;
@@ -41,23 +46,22 @@ body {
 .wrapper {
     border: 1px solid white;
     width: 80%;
+    
 }
 
 section {
     width: 100%;
     height: 100vh;
     font-family: "Poppins", sans-serif;
-    font-family: "Roboto", sans-serif;
+
 }
 
 header {
     padding-top: 1rem;
     width: 100%;
     height: 3rem;
-
     display: flex;
     align-items: space-between;
-    background: $bg-color;
     color: $text-header;
 
     .logo {
@@ -99,7 +103,7 @@ header {
                 bottom: 0;
                 width: 100%;
                 height: 2px;
-                background-color: $text-header;
+            
                 border-radius: 10px;
                 transition: all 300ms;
                 z-index: -1;
@@ -124,7 +128,7 @@ header {
 }
 
 section.main {
-    background: $bg-color;
+   
     color: $text-header;
 
     .main-wrapper {
@@ -136,15 +140,15 @@ section.main {
 }
 
 section.tools {
-    background: hsl(218, 75%, 27%);
+
     color: $text-primary;
 }
 section.projects {
-    background: $bg-color;
+
     color: $text-primary;
 }
 section.contact {
-    background: hsl(218, 75%, 27%);
+
     color: $text-primary;
 }
 
@@ -164,12 +168,12 @@ section.contact {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-family: "Roboto Mono", monospace;
+
     color: $text-header;
 
     h1 {
         font-size: clamp(1rem, 3vw + 0.8rem, 2.2rem);
-        font-family: "Roboto Mono", monospace;
+  
         font-weight: 500;
         position: relative;
         width: max-content;
@@ -186,14 +190,14 @@ section.contact {
         }
 
         &::before {
-            background: $bg-color;
+   
             animation: typewriter $typewriterSpeed steps($typewriterCharacters)
                 1s forwards;
         }
 
         &::after {
             width: 0.125em;
-            background-color: $text-primary;
+        
             animation: typewriter $typewriterSpeed steps($typewriterCharacters)
                     1s forwards,
                 blink 750ms steps($typewriterCharacters) infinite;
@@ -212,15 +216,17 @@ section.contact {
         width: 10rem;
         height: 3rem;
         font-size: 1rem;
-        border: 1px solid;
-        border-radius: 10px;
-        background-color: transparent;
+        border: 2px solid;
+        border-radius: 50px;
+        background-color: $button-bg;
+        filter: blur(5);
         color: $button;
+        transition: ease 0.3s;
         font-weight: 500;
 
         &:hover,
         &.active {
-            background-color: $text-header-opacity;
+            background-color: $button-bg-hover;
    
             font-weight: 500;
         }
@@ -230,6 +236,6 @@ section.contact {
 
 
 footer {
-    background: $bg-color;
+
     color: $text-primary;
 }

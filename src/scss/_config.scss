@@ -2,10 +2,12 @@ $bg-color: hsl(218, 76%, 10%);
 
 $pale-orange: hsl(25, 100%, 94%);
 $grayish-blue: hsl(220, 14%, 75%);
-$text-header: hsl(178, 100%, 88%);
+$text-header: hsl(0, 0%, 100%);
 $text-header-opacity: hsla(178, 100%, 88%, 0.2);
-$text-primary: hsl(255,100%, 100%);
-$button: rgb(255, 128, 31);
+$text-primary: hsl(193,100%, 78%);
+$button: hsl(164, 95%, 43%);
+$button-bg: hsla(0, 0%, 0%, 0.6);
+$button-bg-hover: hsla(164, 95%, 43%, 0.1);
 $typewriterSpeed: 6s;
 $typewriterCharacters: 21;
 
