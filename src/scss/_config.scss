@@ -1,15 +1,14 @@
-$bg-color: hsl(218, 76%, 10%);
-
+$bg-color: hsla(218, 76%, 10%, 1);
+$bg-glassy: hsla(0, 0%, 0%, 0.8);
 $pale-orange: hsl(25, 100%, 94%);
 $grayish-blue: hsl(220, 14%, 75%);
 $text-header: hsl(0, 0%, 100%);
-$text-header-opacity: hsla(178, 100%, 88%, 0.2);
 $text-primary: hsl(193,100%, 78%);
+$text-link: hsl(164, 95%, 43%);
 $button: hsl(164, 95%, 43%);
 $button-bg: hsla(0, 0%, 0%, 0.3);
-$button-bg-hover: hsla(164, 95%, 43%, 0.1);
-$typewriterSpeed: 6s;
-$typewriterCharacters: 21;
+$button-bg-hover: hsla(164, 95%, 43%, 0.15);
+
 
 * {
     box-sizing: border-box;

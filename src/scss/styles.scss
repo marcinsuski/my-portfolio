@@ -1,24 +1,5 @@
 @use "config" as *;
 
-@keyframes typewriter {
-    to {
-        left: 100%;
-    }
-}
-
-@keyframes blink {
-    to {
-        background: transparent;
-    }
-}
-
-@keyframes fadeInRight {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
 @keyframes slide {
     to {
         width: 100%;
@@ -28,15 +9,14 @@
 body {
     width: 100vw;
     height: 100%;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 100%;
-
-    background: url('../src/images/background-hexagon.svg');
+    background: url("../src/images/background-hexagon.svg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    backdrop-filter: brightness(60%);
+    backdrop-filter: brightness(100%);
     color: $text-primary;
     display: flex;
     flex-direction: column;
@@ -44,17 +24,41 @@ body {
     justify-content: center;
 }
 
-.wrapper {
+a {
+    text-decoration: none;
+    color: $text-link;
 
+
+}
+
+button {
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    border: 2px solid;
+    border-radius: 50px;
+    background-color: hsla(0, 0%, 5%, 0.2);
+    backdrop-filter: blur(2px);
+    color: $button;
+    transition: ease 0.3s;
+    font-weight: 500;
+    letter-spacing: 0.15rem;
+
+    &:hover,
+    &.active {
+        background-color: $button-bg-hover;
+        backdrop-filter: blur(2px);
+        font-weight: 500;
+    }
+}
+
+.wrapper {
     width: 80%;
-    
 }
 
 section {
     width: 100%;
     height: 100vh;
     font-family: "Poppins", sans-serif;
-
 }
 
 header {
@@ -62,6 +66,7 @@ header {
     width: 100%;
     height: 3rem;
     display: flex;
+    font-size: clamp(0.5rem, 5vh + 0.4rem, 1.25rem);
     align-items: space-between;
     color: $text-header;
 
@@ -70,20 +75,20 @@ header {
         align-items: center;
         justify-content: center;
         width: 20%;
+        color: $text-primary;
     }
 
     .menu {
         display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: center;
-        padding-right: 3rem;
+        align-items: center;
+        justify-content: flex-end;
         width: 80%;
 
         ul {
             height: 100%;
             display: flex;
             gap: 3rem;
+            padding-right: 2rem;
         }
 
         li {
@@ -92,7 +97,6 @@ header {
             align-items: center;
             justify-content: center;
             height: 100%;
-            font-size: 1rem;
             list-style: none;
             border-bottom: none;
             overflow: hidden;
@@ -104,13 +108,11 @@ header {
                 bottom: 0;
                 width: 100%;
                 height: 2px;
-            
+
                 border-radius: 10px;
                 transition: all 300ms;
                 z-index: -1;
                 transform: translateX(-101%);
-
-                
             }
 
             &:hover::after {
@@ -119,124 +121,97 @@ header {
 
             a {
                 text-decoration: none;
-                color: inherit;
+                color: $text-primary;
 
+                &:hover {
+                    color: $text-link;
+                }
+            }
 
+            button {
+                padding: 0.5rem 2rem;
+                font-size: 0.2rem;
+                border: 2px solid;
+                border-radius: 50px;
+                background-color: $button-bg;
+                backdrop-filter: blur(4px);
+                color: $button;
+                transition: ease 0.3s;
+                font-weight: 500;
 
+                &:hover,
+                &.active {
+                    background-color: $button-bg-hover;
+                    backdrop-filter: blur(4px);
+                    font-weight: 500;
+                }
             }
         }
     }
 }
 
 section.main {
-   
+    height: 95vh;
     color: $text-header;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     .main-wrapper {
-        width: 100%;
-        height: 100%;
+        margin-left: clamp(0.5rem, 5vw + 0.5rem, 5rem);
         display: flex;
         flex-direction: row;
     }
 }
 
-section.tools {
-
-    color: $text-primary;
-}
-section.projects {
-
-    color: $text-primary;
-}
-section.contact {
-
-    color: $text-primary;
-}
-
-.hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 60%;
-}
-
-.welcome {
-    width: 50%;
-    height: 100vh;
+.title {
+    width: 40vw;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     text-align: center;
-
     color: $text-header;
 
-    h1 {
-        font-size: clamp(1rem, 3vw + 0.8rem, 2.2rem);
-  
-        font-weight: 500;
-        position: relative;
-        width: max-content;
-        margin-bottom: 1rem;
+    .welcome {
+        width: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
 
-        &::before,
-        &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
+        h1 {
+            font-size: clamp(2rem, 3vw + 0.8rem, 5rem);
+            font-weight: 800;
+            letter-spacing: 0.4rem;
+            position: relative;
+            width: max-content;
+            margin-bottom: 1rem;
         }
 
-        &::before {
-   
-            animation: typewriter $typewriterSpeed steps($typewriterCharacters)
-                1s forwards;
+        p {
+            font-size: clamp(0.5rem, 2vw + 0.2rem, 1.25rem);
+            color: $text-primary;
+            text-align: start;
+            margin-bottom: 1.5rem;
         }
 
-        &::after {
-            width: 0.125em;
-        
-            animation: typewriter $typewriterSpeed steps($typewriterCharacters)
-                    1s forwards,
-                blink 750ms steps($typewriterCharacters) infinite;
-        }
-    }
-    .subtitle {
-        font-size: clamp(0.6rem, 3vw + 0.5rem, 1.3rem);
-        position: relative;
-        opacity: 0;
-        transform: translateX(-3rem);
-        animation: fadeInRight 2s ease calc($typewriterSpeed + 1s) forwards;
-        margin-bottom: 2rem;
-    }
+    
 
-    button {
-        width: 10rem;
-        height: 3rem;
-        font-size: 1rem;
-        border: 2px solid;
-        border-radius: 50px;
-        background-color: $button-bg;
-        backdrop-filter: blur(4px);
-        color: $button;
-        transition: ease 0.3s;
-        font-weight: 500;
-
-        &:hover,
-        &.active {
-            background-color: $button-bg-hover;
-            backdrop-filter: blur(4px);
-            font-weight: 500;
-        }
+      
     }
 }
 
-
+section.tools {
+    color: $text-primary;
+}
+section.projects {
+    color: $text-primary;
+}
+section.contact {
+    color: $text-primary;
+}
 
 footer {
-
     color: $text-primary;
 }
