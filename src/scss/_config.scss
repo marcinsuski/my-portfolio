@@ -6,8 +6,10 @@ $text-header: hsl(0, 0%, 100%);
 $text-primary: hsl(193, 100%, 78%);
 $text-link: hsl(164, 95%, 43%);
 $button: hsl(164, 95%, 43%);
-$button-bg: hsla(0, 0%, 0%, 0.3);
+$button-bg: hsla(0, 0%, 0%, 1);
 $button-bg-hover: hsla(164, 95%, 43%, 0.15);
+$preview-bg: hsla(193, 29%, 14%, 0.6);
+$preview-border:  hsl(193, 100%, 78%);
 
 
 * {
@@ -15,6 +17,12 @@ $button-bg-hover: hsla(164, 95%, 43%, 0.15);
     margin: 0;
     padding: 0;
 }
+
+a, .link {
+    text-decoration: none;
+    color: $text-link;
+}
+
 
 html {
     scroll-behavior: smooth;
