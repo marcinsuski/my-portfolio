@@ -44,7 +44,12 @@ h2 {
 }
 
 h3 {
-  
+    font-size: clamp(0.5rem, 2vw + 0.2rem, 1.8rem);
+    font-weight: 500;
+}
+
+h4 {
+    font-size: clamp(0.3rem, 1.5vw + 0.2rem, 1.6rem);
     font-weight: 500;
 }
 

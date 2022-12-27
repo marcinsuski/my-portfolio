@@ -26,6 +26,12 @@ h2 {
 }
 
 h3 {
+  font-size: clamp(0.5rem, 2vw + 0.2rem, 1.8rem);
+  font-weight: 500;
+}
+
+h4 {
+  font-size: clamp(0.3rem, 1.5vw + 0.2rem, 1.6rem);
   font-weight: 500;
 }
 
@@ -265,9 +271,6 @@ section.skills {
   justify-content: center;
   margin-bottom: 2rem;
 }
-.skills__title h3 {
-  font-size: clamp(0.5rem, 2vw + 0.2rem, 1.8rem);
-}
 .skills__content {
   display: flex;
   flex-direction: column;
@@ -308,9 +311,6 @@ section.main-projects {
   display: flex;
   align-items: center;
   margin-bottom: 6rem;
-}
-.main-projects .title h3 {
-  font-size: clamp(0.5rem, 2vw + 0.2rem, 1.8rem);
 }
 .main-projects .project__container {
   width: 80%;
@@ -408,7 +408,7 @@ section.other-projects {
 .other-projects {
   margin-top: 6rem;
   width: 100%;
-  min-height: 90vw;
+  min-height: 80vw;
 }
 .other-projects .title {
   width: 100%;
@@ -496,6 +496,48 @@ section.contact {
   color: hsl(193deg, 100%, 78%);
 }
 
+.contact {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact__container {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contact__info {
+  width: 50%;
+  height: 70%;
+}
+.contact__form {
+  width: 50%;
+}
+
 footer {
+  font-size: 0.8rem;
+  width: 95%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 2px solid hsl(193deg, 100%, 78%);
   color: hsl(193deg, 100%, 78%);
+}
+footer .socials {
+  transition: ease 0.3s;
+}
+footer .socials :hover {
+  filter: invert(80%) sepia(90%) saturate(1552%) hue-rotate(145deg) brightness(200%) contrast(60%);
+}
+footer .mail a {
+  color: hsl(193deg, 100%, 78%);
+  transition: ease 0.3s;
+}
+footer .mail a:hover {
+  color: hsl(164deg, 95%, 43%);
 }/*# sourceMappingURL=styles.css.map */
