@@ -21,7 +21,7 @@ h2 {
 }
 
 h3 {
-  font-size: 2rem;
+  font-weight: 500;
 }
 
 @keyframes slide {
@@ -72,6 +72,7 @@ button:hover, button.active {
 
 .wrapper {
   width: 80%;
+  max-width: 1048px;
 }
 
 section {
@@ -208,37 +209,68 @@ section.main .main-wrapper {
   backdrop-filter: blur(2px);
 }
 
-section.tools {
+section.about {
   width: 100%;
   color: hsl(193deg, 100%, 78%);
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-section.tools .about-me {
+section.about .about-me {
   display: flex;
   flex-direction: column;
   width: clamp(18rem, 10vw + 15rem, 40rem);
   height: clamp(18rem, 10vw + 15rem, 40rem);
 }
-section.tools .about-me__content {
+section.about .about-me__content {
   padding: 1rem;
 }
-section.tools .about-me__content p {
+section.about .about-me__content p {
   font-size: 0.9rem;
 }
-section.tools .hero {
+section.about .hero {
   width: clamp(18rem, 10vw + 15rem, 40rem);
   height: clamp(18rem, 10vw + 15rem, 40rem);
   overflow: hidden;
   border-radius: 5px;
 }
-section.tools .hero img {
+section.about .hero img {
   width: clamp(18rem, 10vw + 15rem, 40rem);
   height: clamp(18rem, 10vw + 15rem, 40rem);
   object-position: 0 30%;
   object-fit: cover;
   border-radius: 5px;
+}
+
+section.skills {
+  color: hsl(193deg, 100%, 78%);
+}
+
+.skills {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 10rem;
+  display: flex;
+  justify-content: space-between;
+}
+.skills__container {
+  width: 31%;
+  max-width: 32%;
+  height: 80vh;
+  gap: 1rem;
+}
+.skills__title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.skills__title h3 {
+  font-size: clamp(0.5rem, 2vw + 0.2rem, 1.8rem);
+}
+.skills__content {
+  padding: 1rem;
+  height: 65vh;
 }
 
 section.projects {

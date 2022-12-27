@@ -51,6 +51,7 @@ button {
 
 .wrapper {
     width: 80%;
+    max-width: 1048px;
 }
 
 section {
@@ -203,7 +204,7 @@ section.main {
     backdrop-filter: blur(2px);
 }
 
-section.tools {
+section.about {
     width: 100%;
     color: $text-primary;
     display: flex;
@@ -241,7 +242,43 @@ section.tools {
     }
 }
 
+section.skills {
+    color: $text-primary;
+}
 
+.skills {
+    width: 100%;
+   
+    display: flex;
+    align-items: center;
+ 
+    margin-top: 10rem;
+    display: flex;
+    justify-content: space-between;
+
+
+    &__container {
+        width: 31%;
+        max-width: 32%;
+        height: 80vh;
+        gap: 1rem;
+    }
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+
+        h3 {
+            font-size: clamp(0.5rem, 2vw + 0.2rem, 1.8rem);
+        }
+    }
+
+    &__content {
+        padding: 1rem;
+        height: 65vh;
+    }
+}
 section.projects {
     width: 100%;
     color: $text-primary;
