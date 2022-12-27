@@ -1,9 +1,9 @@
 $bg-color: hsla(218, 76%, 10%, 1);
-$bg-glassy: hsla(0, 0%, 0%, 0.8);
+$bg-glassy: hsla(0, 0%, 0%, 0.6);
 $pale-orange: hsl(25, 100%, 94%);
 $grayish-blue: hsl(220, 14%, 75%);
 $text-header: hsl(0, 0%, 100%);
-$text-primary: hsl(193,100%, 78%);
+$text-primary: hsl(193, 100%, 78%);
 $text-link: hsl(164, 95%, 43%);
 $button: hsl(164, 95%, 43%);
 $button-bg: hsla(0, 0%, 0%, 0.3);
@@ -16,6 +16,28 @@ $button-bg-hover: hsla(164, 95%, 43%, 0.15);
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   color: $text-header;
+//     background: -webkit-linear-gradient(40deg, #eee, #8fe7ff);
+//   -webkit-background-clip: text;
+//   -webkit-text-fill-color: transparent;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
 
 
 @mixin media-md {
