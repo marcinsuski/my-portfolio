@@ -30,9 +30,9 @@ faders.forEach((fader) => {
     appearOnScroll.observe(fader);
 });
 
-// sliders.forEach((slider) => {
-//     appearOnScroll.observe(slider);
-// });
+sliders.forEach((slider) => {
+    appearOnScroll.observe(slider);
+});
 
 // const options = {
 //     root: null,
