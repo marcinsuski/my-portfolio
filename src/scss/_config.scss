@@ -18,7 +18,8 @@ $preview-border:  hsl(193, 100%, 78%);
     padding: 0;
 }
 
-a, .link {
+a,
+.link {
     text-decoration: none;
     color: $text-link;
 }
@@ -30,13 +31,15 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
    color: $text-header;
-//     background: -webkit-linear-gradient(40deg, #eee, #8fe7ff);
-//   -webkit-background-clip: text;
-//   -webkit-text-fill-color: transparent;
+
+
 }
 
 h1 {
     font-size: 3.5rem;
+    background: -webkit-linear-gradient(20deg, #eee, #8fe7ff,  #eee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h2 {

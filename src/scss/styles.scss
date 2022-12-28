@@ -8,7 +8,6 @@
 
 body {
     width: 100vw;
-
     height: 100%;
     font-family: "Josefin Sans", sans-serif;
     font-size: 100%;
@@ -23,6 +22,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow-x: hidden;
 }
 
 button {
@@ -36,7 +36,6 @@ button {
     transition: ease 0.3s;
     font-weight: 500;
     letter-spacing: 0.15rem;
-
 
     &:hover,
     &.active {
@@ -57,14 +56,58 @@ section {
     font-family: "Poppins", sans-serif;
 }
 
+.fade-in {
+    opacity: 0;
+    transform: translateY(20%);
+    transition: opacity 0.2s ease-in, transform 0.6s ease-in;
+
+    &.appear {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.from-left {
+    transform: translateY(20%);
+    opacity: 0;
+}
+
+.from-right {
+    transform: translateY(20%);
+    opacity: 0;
+}
+
+.from-left,
+.from-right {
+    transition: opacity 0.2s ease-in, transform 0.6s ease-in;
+}
+
+.from-left.appear,
+.from-right.appear {
+    transform: translateY(0);
+    opacity: 1;
+}
+
 header {
-    padding-top: 1rem;
     width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    padding-top: 1rem;
     height: 3rem;
     display: flex;
     font-size: clamp(0.5rem, 5vh + 0.4rem, 1.25rem);
-    align-items: space-between;
+    align-items: center;
+    justify-content: center;
     color: $text-header;
+    // background-color: $bg-glassy;
+    // backdrop-filter: blur(8px);
+
+    .navbar {
+        width: 70%;
+        display: flex;
+        align-items: space-between;
+    }
 
     .logo {
         display: flex;
@@ -104,13 +147,13 @@ header {
                 align-items: center;
                 width: 100%;
                 height: 100%;
-
                 text-decoration: none;
                 color: $text-primary;
-                transition: 0.3s;
+                transition: all 0.3s ease-in;
 
                 &:hover {
                     color: $text-link;
+                    transform: translateY(-3px);
                 }
             }
 
@@ -133,8 +176,8 @@ header {
                     width: 100%;
                     height: 100%;
                     background-color: $button-bg;
-                      backdrop-filter: blur(4px);
-                      -webkit-backdrop-filter: blur(4px);
+                    backdrop-filter: blur(4px);
+                    -webkit-backdrop-filter: blur(4px);
                     position: absolute;
                 }
 
@@ -206,7 +249,7 @@ section.main {
 
 section.about {
     width: 100%;
-    min-height: 70vw;
+    min-height: 50vw;
     height: max-content;
     color: $text-primary;
     display: flex;
@@ -281,22 +324,42 @@ section.skills {
     }
 
     &__item {
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 5px;
-        border: 1px solid $text-primary;
+        border: transparent;
         width: 90%;
         height: 3rem;
         margin-bottom: 1rem;
         font-size: 0.8rem;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2%;
+            height: 100%;
+            border-left: 1px solid $text-primary;
+            border-top: 1px solid $text-primary;
+            border-bottom: 1px solid $text-primary;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 2%;
+            height: 100%;
+            border-right: 1px solid $text-primary;
+            border-top: 1px solid $text-primary;
+            border-bottom: 1px solid $text-primary;
+        }
     }
 }
 
-.filter {
-    filter: invert(10%) sepia(180%) saturate(1552%) hue-rotate(180deg)
-        brightness(180%) contrast(60%);
-}
 section.main-projects {
     width: 100%;
     color: $text-primary;
@@ -305,6 +368,33 @@ section.main-projects {
     align-items: center;
     min-height: 80vw;
     height: max-content;
+}
+
+.content__title-icon svg {
+    width: 22px;
+    height: 22px;
+    transition: all 0.3s ease-in;
+    fill: $text-primary;
+    
+    &:hover,
+    &:active {
+        fill: $text-link;
+        transform: translateY(-3px);
+        
+    }
+}
+
+.socials svg {
+    width: 22px;
+    height: 22px;
+    transition: all 0.3s ease-in;
+    fill: $text-primary;
+   
+
+    &:hover,
+    &:active {
+        fill: $text-link;
+    }
 }
 
 .main-projects {
@@ -346,6 +436,14 @@ section.main-projects {
                         align-items: flex-end;
                         justify-content: center;
                         transition: ease 0.3s;
+
+                        svg {
+                            fill: $text-primary;
+
+                            &:hover {
+                                fill: $text-link;
+                            }
+                        }
                     }
                 }
             }
@@ -377,19 +475,14 @@ section.main-projects {
             justify-content: center;
             align-items: center;
             gap: 2rem;
-         
-
-          
         }
 
         &::before,
         &::after {
             height: 50px;
             width: 50px;
-
             left: 1.5rem;
             top: 0;
-
             content: "";
             position: absolute;
         }
@@ -520,11 +613,6 @@ section.other-projects {
     }
 }
 
-.content__title-icon:hover {
-    filter: invert(80%) sepia(90%) saturate(1552%) hue-rotate(145deg)
-        brightness(200%) contrast(60%);
-}
-
 section.contact {
     color: $text-primary;
 }
@@ -536,14 +624,12 @@ section.contact {
     flex-direction: column;
     align-items: center;
 
-
     &__container {
         width: 100%;
         height: 70vh;
         display: flex;
         align-items: center;
         justify-content: space-between;
-
     }
 
     &__info {
@@ -555,7 +641,6 @@ section.contact {
         justify-content: flex-start;
         align-items: flex-end;
         font-size: 0.8rem;
-
 
         &-wrapper {
             margin-top: 10%;
@@ -707,21 +792,26 @@ footer {
     border-top: 2px solid $text-primary;
     color: $text-primary;
 
-    .socials {
-        transition: ease 0.3s;
+    .socials svg {
+        width: 22px;
+        height: 22px;
+        transition: all 0.3s ease-in;
+        fill: $text-primary;
+       
 
-        :hover {
-            filter: invert(80%) sepia(90%) saturate(1552%) hue-rotate(145deg)
-                brightness(200%) contrast(60%);
+        &:hover,
+        &:active {
+            fill: $text-link;
+            transform: translateY(-3px);
         }
     }
-
     .mail a {
         color: $text-primary;
-        transition: ease 0.3s;
+        transition: all 0.3s ease-in;
 
         &:hover {
             color: $text-link;
+       
         }
     }
 }

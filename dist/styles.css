@@ -4,7 +4,8 @@
   padding: 0;
 }
 
-a, .link {
+a,
+.link {
   text-decoration: none;
   color: hsl(164deg, 95%, 43%);
 }
@@ -19,6 +20,9 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 3.5rem;
+  background: -webkit-linear-gradient(20deg, #eee, #8fe7ff, #eee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 h2 {
@@ -56,6 +60,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden;
 }
 
 button {
@@ -87,14 +92,54 @@ section {
   font-family: "Poppins", sans-serif;
 }
 
+.fade-in {
+  opacity: 0;
+  transform: translateY(20%);
+  transition: opacity 0.2s ease-in, transform 0.6s ease-in;
+}
+.fade-in.appear {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.from-left {
+  transform: translateY(20%);
+  opacity: 0;
+}
+
+.from-right {
+  transform: translateY(20%);
+  opacity: 0;
+}
+
+.from-left,
+.from-right {
+  transition: opacity 0.2s ease-in, transform 0.6s ease-in;
+}
+
+.from-left.appear,
+.from-right.appear {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 header {
-  padding-top: 1rem;
   width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  padding-top: 1rem;
   height: 3rem;
   display: flex;
   font-size: clamp(0.5rem, 5vh + 0.4rem, 1.25rem);
-  align-items: space-between;
+  align-items: center;
+  justify-content: center;
   color: hsl(0deg, 0%, 100%);
+}
+header .navbar {
+  width: 70%;
+  display: flex;
+  align-items: space-between;
 }
 header .logo {
   display: flex;
@@ -134,10 +179,11 @@ header .menu li a {
   height: 100%;
   text-decoration: none;
   color: hsl(193deg, 100%, 78%);
-  transition: 0.3s;
+  transition: all 0.3s ease-in;
 }
 header .menu li a:hover {
   color: hsl(164deg, 95%, 43%);
+  transform: translateY(-3px);
 }
 header .menu li button {
   position: relative;
@@ -221,7 +267,7 @@ section.main .main-wrapper {
 
 section.about {
   width: 100%;
-  min-height: 70vw;
+  min-height: 50vw;
   height: max-content;
   color: hsl(193deg, 100%, 78%);
   display: flex;
@@ -286,19 +332,38 @@ section.skills {
   height: 65vh;
 }
 .skills__item {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  border: 1px solid hsl(193deg, 100%, 78%);
+  border: transparent;
   width: 90%;
   height: 3rem;
   margin-bottom: 1rem;
   font-size: 0.8rem;
 }
-
-.filter {
-  filter: invert(10%) sepia(180%) saturate(1552%) hue-rotate(180deg) brightness(180%) contrast(60%);
+.skills__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2%;
+  height: 100%;
+  border-left: 1px solid hsl(193deg, 100%, 78%);
+  border-top: 1px solid hsl(193deg, 100%, 78%);
+  border-bottom: 1px solid hsl(193deg, 100%, 78%);
+}
+.skills__item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2%;
+  height: 100%;
+  border-right: 1px solid hsl(193deg, 100%, 78%);
+  border-top: 1px solid hsl(193deg, 100%, 78%);
+  border-bottom: 1px solid hsl(193deg, 100%, 78%);
 }
 
 section.main-projects {
@@ -309,6 +374,27 @@ section.main-projects {
   align-items: center;
   min-height: 80vw;
   height: max-content;
+}
+
+.content__title-icon svg {
+  width: 22px;
+  height: 22px;
+  transition: all 0.3s ease-in;
+  fill: hsl(193deg, 100%, 78%);
+}
+.content__title-icon svg:hover, .content__title-icon svg:active {
+  fill: hsl(164deg, 95%, 43%);
+  transform: translateY(-3px);
+}
+
+.socials svg {
+  width: 22px;
+  height: 22px;
+  transition: all 0.3s ease-in;
+  fill: hsl(193deg, 100%, 78%);
+}
+.socials svg:hover, .socials svg:active {
+  fill: hsl(164deg, 95%, 43%);
 }
 
 .main-projects {
@@ -349,6 +435,12 @@ section.main-projects {
   align-items: flex-end;
   justify-content: center;
   transition: ease 0.3s;
+}
+.main-projects .project__container .project__content .content__title-icons-icon svg {
+  fill: hsl(193deg, 100%, 78%);
+}
+.main-projects .project__container .project__content .content__title-icons-icon svg:hover {
+  fill: hsl(164deg, 95%, 43%);
 }
 .main-projects .project__container .project__content .content__main-text {
   font-size: 0.8rem;
@@ -491,10 +583,6 @@ section.other-projects {
   background-repeat: no-repeat;
   background-size: 60%;
   transform: translateY(-50%);
-}
-
-.content__title-icon:hover {
-  filter: invert(80%) sepia(90%) saturate(1552%) hue-rotate(145deg) brightness(200%) contrast(60%);
 }
 
 section.contact {
@@ -650,15 +738,19 @@ footer {
   border-top: 2px solid hsl(193deg, 100%, 78%);
   color: hsl(193deg, 100%, 78%);
 }
-footer .socials {
-  transition: ease 0.3s;
+footer .socials svg {
+  width: 22px;
+  height: 22px;
+  transition: all 0.3s ease-in;
+  fill: hsl(193deg, 100%, 78%);
 }
-footer .socials :hover {
-  filter: invert(80%) sepia(90%) saturate(1552%) hue-rotate(145deg) brightness(200%) contrast(60%);
+footer .socials svg:hover, footer .socials svg:active {
+  fill: hsl(164deg, 95%, 43%);
+  transform: translateY(-3px);
 }
 footer .mail a {
   color: hsl(193deg, 100%, 78%);
-  transition: ease 0.3s;
+  transition: all 0.3s ease-in;
 }
 footer .mail a:hover {
   color: hsl(164deg, 95%, 43%);
