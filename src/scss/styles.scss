@@ -8,6 +8,7 @@
 
 body {
     width: 100vw;
+
     height: 100%;
     font-family: "Josefin Sans", sans-serif;
     font-size: 100%;
@@ -30,16 +31,17 @@ button {
     border: 2px solid;
     border-radius: 50px;
     background-color: hsla(0, 0%, 5%, 0.2);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(4px);
     color: $button;
     transition: ease 0.3s;
     font-weight: 500;
     letter-spacing: 0.15rem;
 
+
     &:hover,
     &.active {
         background-color: $button-bg-hover;
-        backdrop-filter: blur(2px);
+        backdrop-filter: blur(4px);
         font-weight: 500;
     }
 }
@@ -94,28 +96,18 @@ header {
             list-style: none;
             border-bottom: none;
             overflow: hidden;
-
-            &::after {
-                content: "";
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                height: 2px;
-
-                border-radius: 10px;
-                transition: all 300ms;
-                z-index: -1;
-                transform: translateX(-101%);
-            }
-
-            &:hover::after {
-                transform: translateX(0);
-            }
+            transition: 0.3s;
 
             a {
+                position: relative;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+
                 text-decoration: none;
                 color: $text-primary;
+                transition: 0.3s;
 
                 &:hover {
                     color: $text-link;
@@ -123,6 +115,7 @@ header {
             }
 
             button {
+                position: relative;
                 padding: 0.5rem 2rem;
                 font-size: 0.2rem;
                 border: 2px solid;
@@ -132,6 +125,18 @@ header {
                 color: $button;
                 transition: ease 0.3s;
                 font-weight: 500;
+
+                &::after {
+                    content: "";
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $button-bg;
+                      backdrop-filter: blur(4px);
+                      -webkit-backdrop-filter: blur(4px);
+                    position: absolute;
+                }
 
                 &:hover,
                 &.active {
@@ -196,11 +201,13 @@ section.main {
     background: $bg-glassy;
     border: none;
     border-radius: 5px;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(4px);
 }
 
 section.about {
     width: 100%;
+    min-height: 70vw;
+    height: max-content;
     color: $text-primary;
     display: flex;
     align-items: center;
@@ -262,8 +269,6 @@ section.skills {
         display: flex;
         justify-content: center;
         margin-bottom: 2rem;
-
-     
     }
 
     &__content {
@@ -298,16 +303,18 @@ section.main-projects {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 80vw;
+    height: max-content;
 }
 
 .main-projects {
     margin: 6rem 0;
+
     .title {
         width: 100%;
         display: flex;
         align-items: center;
         margin-bottom: 6rem;
-      
     }
 
     .project__container {
@@ -370,11 +377,9 @@ section.main-projects {
             justify-content: center;
             align-items: center;
             gap: 2rem;
-            z-index: 0;
+         
 
-            button {
-                z-index: 1;
-            }
+          
         }
 
         &::before,
@@ -420,7 +425,8 @@ section.other-projects {
 .other-projects {
     margin-top: 6rem;
     width: 100%;
-    min-height: 80vw;
+    min-height: 70vw;
+    height: max-content;
 
     .title {
         width: 100%;
@@ -433,13 +439,13 @@ section.other-projects {
         }
     }
 
-.projects__wrapper {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 5%;
-}
+    .projects__wrapper {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 5%;
+    }
 
     .project__container {
         width: 30vh;
@@ -484,7 +490,6 @@ section.other-projects {
                     border: 1px solid $text-primary;
                     border-radius: 5px;
                     font-size: 0.6rem;
-              
                 }
             }
         }
@@ -511,14 +516,13 @@ section.other-projects {
             background-repeat: no-repeat;
             background-size: 60%;
             transform: translateY(-50%);
-          
         }
     }
 }
 
 .content__title-icon:hover {
     filter: invert(80%) sepia(90%) saturate(1552%) hue-rotate(145deg)
-    brightness(200%) contrast(60%);
+        brightness(200%) contrast(60%);
 }
 
 section.contact {
@@ -531,28 +535,167 @@ section.contact {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
+
     &__container {
         width: 100%;
         height: 70vh;
         display: flex;
         align-items: center;
         justify-content: space-between;
+
     }
 
     &__info {
+        position: relative;
         width: 50%;
         height: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+        font-size: 0.8rem;
 
+
+        &-wrapper {
+            margin-top: 10%;
+            margin-right: 10%;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+
+            gap: 1rem;
+        }
+
+        &-text {
+            text-align: justify;
+            text-justify: inter-word;
+            margin-bottom: 1rem;
+        }
+
+        &-address,
+        &-tel,
+        &-mail {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 1000%;
+            background: $bg-glassy;
+            border: none;
+            border-radius: 5px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: -1;
+        }
     }
     &__form {
+        height: 70%;
         width: 50%;
+        display: flex;
+        font-size: 0.8rem;
+
+        .container {
+            width: 70%;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-beetween;
+            align-items: flex-end;
+        }
+
+        .form {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding-top: 10%;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            width: 80%;
+            position: relative;
+
+            & label {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 0.5rem;
+                color: $text-header;
+                font-weight: 400;
+                font-size: 0.7rem;
+                letter-spacing: 0.1rem;
+                pointer-events: none;
+                transition: 0.5s;
+            }
+
+            & input:focus,
+            & textarea:focus {
+                border: 2px solid $text-link;
+            }
+
+            & input:focus + label,
+            & input:valid + label,
+            & textarea:focus + label,
+            & textarea:valid + label {
+                top: -1.5rem;
+                font-size: 0.9rem;
+                padding: 0;
+                left: 0;
+                color: $text-link;
+            }
+        }
+
+        input {
+            height: 2.2rem;
+            border-radius: 5px;
+            width: 100%;
+            backdrop-filter: blur(4px);
+            color: $text-primary;
+            border: 1px solid $text-primary;
+            background-color: $bg-glassy;
+        }
+
+        textarea {
+            height: 8rem;
+            border-radius: 5px;
+            width: 100%;
+            color: $text-primary;
+            border: 1px solid $text-primary;
+            background-color: $bg-glassy;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: transparent;
+        }
+
+        .contact-btn {
+            transition: ease 0.3s;
+            margin-bottom: 10%;
+            outline: transparent;
+
+            &:hover,
+            &.active {
+                background-color: $button-bg-hover;
+                backdrop-filter: blur(4px);
+                font-weight: 500;
+                cursor: pointer;
+            }
+        }
     }
 }
-
-
-
-
 
 footer {
     font-size: 0.8rem;
@@ -564,14 +707,14 @@ footer {
     border-top: 2px solid $text-primary;
     color: $text-primary;
 
-    .socials{
+    .socials {
         transition: ease 0.3s;
 
-    :hover  {
-        filter: invert(80%) sepia(90%) saturate(1552%) hue-rotate(145deg)
-        brightness(200%) contrast(60%);
+        :hover {
+            filter: invert(80%) sepia(90%) saturate(1552%) hue-rotate(145deg)
+                brightness(200%) contrast(60%);
+        }
     }
-}
 
     .mail a {
         color: $text-primary;

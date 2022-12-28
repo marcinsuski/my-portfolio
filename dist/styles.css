@@ -64,7 +64,7 @@ button {
   border: 2px solid;
   border-radius: 50px;
   background-color: hsla(0deg, 0%, 5%, 0.2);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(4px);
   color: hsl(164deg, 95%, 43%);
   transition: ease 0.3s;
   font-weight: 500;
@@ -72,7 +72,7 @@ button {
 }
 button:hover, button.active {
   background-color: hsla(164deg, 95%, 43%, 0.15);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(4px);
   font-weight: 500;
 }
 
@@ -124,30 +124,23 @@ header .menu li {
   list-style: none;
   border-bottom: none;
   overflow: hidden;
-}
-header .menu li::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  border-radius: 10px;
-  transition: all 300ms;
-  z-index: -1;
-  transform: translateX(-101%);
-}
-header .menu li:hover::after {
-  transform: translateX(0);
+  transition: 0.3s;
 }
 header .menu li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   text-decoration: none;
   color: hsl(193deg, 100%, 78%);
+  transition: 0.3s;
 }
 header .menu li a:hover {
   color: hsl(164deg, 95%, 43%);
 }
 header .menu li button {
+  position: relative;
   padding: 0.5rem 2rem;
   font-size: 0.2rem;
   border: 2px solid;
@@ -157,6 +150,17 @@ header .menu li button {
   color: hsl(164deg, 95%, 43%);
   transition: ease 0.3s;
   font-weight: 500;
+}
+header .menu li button::after {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(0deg, 0%, 0%);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  position: absolute;
 }
 header .menu li button:hover, header .menu li button.active {
   background-color: hsla(164deg, 95%, 43%, 0.15);
@@ -212,11 +216,13 @@ section.main .main-wrapper {
   background: hsla(0deg, 0%, 0%, 0.6);
   border: none;
   border-radius: 5px;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(4px);
 }
 
 section.about {
   width: 100%;
+  min-height: 70vw;
+  height: max-content;
   color: hsl(193deg, 100%, 78%);
   display: flex;
   align-items: center;
@@ -301,6 +307,8 @@ section.main-projects {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 80vw;
+  height: max-content;
 }
 
 .main-projects {
@@ -365,10 +373,6 @@ section.main-projects {
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  z-index: 0;
-}
-.main-projects .project__container .project__preview button {
-  z-index: 1;
 }
 .main-projects .project__container::before, .main-projects .project__container::after {
   height: 50px;
@@ -408,7 +412,8 @@ section.other-projects {
 .other-projects {
   margin-top: 6rem;
   width: 100%;
-  min-height: 80vw;
+  min-height: 70vw;
+  height: max-content;
 }
 .other-projects .title {
   width: 100%;
@@ -511,11 +516,128 @@ section.contact {
   justify-content: space-between;
 }
 .contact__info {
+  position: relative;
   width: 50%;
   height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  font-size: 0.8rem;
+}
+.contact__info-wrapper {
+  margin-top: 10%;
+  margin-right: 10%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.contact__info-text {
+  text-align: justify;
+  text-justify: inter-word;
+  margin-bottom: 1rem;
+}
+.contact__info-address, .contact__info-tel, .contact__info-mail {
+  display: flex;
+  gap: 1.5rem;
+}
+.contact__info::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 1000%;
+  background: hsla(0deg, 0%, 0%, 0.6);
+  border: none;
+  border-radius: 5px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: -1;
 }
 .contact__form {
+  height: 70%;
   width: 50%;
+  display: flex;
+  font-size: 0.8rem;
+}
+.contact__form .container {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-beetween;
+  align-items: flex-end;
+}
+.contact__form .form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 10%;
+  gap: 1.5rem;
+}
+.contact__form .form-group {
+  width: 80%;
+  position: relative;
+}
+.contact__form .form-group label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 400;
+  font-size: 0.7rem;
+  letter-spacing: 0.1rem;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.contact__form .form-group input:focus, .contact__form .form-group textarea:focus {
+  border: 2px solid hsl(164deg, 95%, 43%);
+}
+.contact__form .form-group input:focus + label, .contact__form .form-group input:valid + label, .contact__form .form-group textarea:focus + label, .contact__form .form-group textarea:valid + label {
+  top: -1.5rem;
+  font-size: 0.9rem;
+  padding: 0;
+  left: 0;
+  color: hsl(164deg, 95%, 43%);
+}
+.contact__form input {
+  height: 2.2rem;
+  border-radius: 5px;
+  width: 100%;
+  backdrop-filter: blur(4px);
+  color: hsl(193deg, 100%, 78%);
+  border: 1px solid hsl(193deg, 100%, 78%);
+  background-color: hsla(0deg, 0%, 0%, 0.6);
+}
+.contact__form textarea {
+  height: 8rem;
+  border-radius: 5px;
+  width: 100%;
+  color: hsl(193deg, 100%, 78%);
+  border: 1px solid hsl(193deg, 100%, 78%);
+  background-color: hsla(0deg, 0%, 0%, 0.6);
+}
+.contact__form input:focus,
+.contact__form textarea:focus {
+  outline: transparent;
+}
+.contact__form .contact-btn {
+  transition: ease 0.3s;
+  margin-bottom: 10%;
+  outline: transparent;
+}
+.contact__form .contact-btn:hover, .contact__form .contact-btn.active {
+  background-color: hsla(164deg, 95%, 43%, 0.15);
+  backdrop-filter: blur(4px);
+  font-weight: 500;
+  cursor: pointer;
 }
 
 footer {
