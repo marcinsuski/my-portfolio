@@ -26,24 +26,24 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: clamp(0.9rem, 6vw + 0.2rem, 2.5rem);
 }
 
 h3 {
-  font-size: clamp(0.5rem, 2vw + 0.2rem, 1.8rem);
+  font-size: clamp(0.8rem, 4vw + 0.2rem, 1.8rem);
   font-weight: 500;
 }
 
 h4 {
-  font-size: clamp(0.3rem, 1.5vw + 0.2rem, 1.6rem);
+  font-size: clamp(0.7rem, 3vw + 0.2rem, 1.6rem);
   font-weight: 500;
 }
 
 body {
-  width: 100vw;
   height: 100%;
   font-family: "Josefin Sans", sans-serif;
   font-size: 100%;
+  background-color: hsl(222deg, 62%, 15%);
   background: url("../src/images/background-hexagon.svg");
   background-position: center center;
   background-repeat: no-repeat;
@@ -55,20 +55,32 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow-x: hidden;
 }
 
 button {
-  padding: 0.5rem 2rem;
-  font-size: 1rem;
+  position: relative;
+  padding: 0.5rem 1.2rem;
+  font-size: clamp(0.9rem, 1.5vw + 0.1rem, 1.25rem);
   border: 2px solid;
   border-radius: 50px;
-  background-color: hsla(0deg, 0%, 5%, 0.2);
-  backdrop-filter: blur(4px);
+  background-color: transparent;
   color: hsl(164deg, 95%, 43%);
   transition: ease 0.3s;
   font-weight: 500;
   letter-spacing: 0.15rem;
+}
+button::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  background-color: hsla(0deg, 0%, 0%, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: -1;
 }
 button:hover, button.active {
   background-color: hsla(164deg, 95%, 43%, 0.15);
@@ -117,16 +129,15 @@ section {
 
 header {
   width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 100;
   padding-top: 1rem;
   height: 3rem;
   display: flex;
-  font-size: clamp(0.5rem, 5vh + 0.4rem, 1.25rem);
+  font-size: clamp(0.5rem, 1.5vw + 0.1rem, 1.15rem);
+  letter-spacing: 0.1rem;
   align-items: center;
   justify-content: center;
   color: hsl(0deg, 0%, 100%);
+  font-weight: 400;
 }
 header .navbar {
   width: 70%;
@@ -149,7 +160,7 @@ header .menu {
 header .menu ul {
   height: 100%;
   display: flex;
-  gap: 3rem;
+  gap: clamp(0.8rem, 3vw + 0.8rem, 3rem);
   padding-right: 2rem;
 }
 header .menu li {
@@ -177,19 +188,18 @@ header .menu li a:hover {
   color: hsl(164deg, 95%, 43%);
   transform: translateY(-3px);
 }
-header .menu li button {
+header .menu li .resume {
   position: relative;
-  padding: 0.5rem 2rem;
-  font-size: 0.2rem;
+  padding: 0;
+  font-size: clamp(0.5rem, 1.5vw + 0.1rem, 1.1rem);
   border: 2px solid;
   border-radius: 50px;
   background-color: hsl(0deg, 0%, 0%);
-  backdrop-filter: blur(4px);
   color: hsl(164deg, 95%, 43%);
   transition: ease 0.3s;
   font-weight: 500;
 }
-header .menu li button::after {
+header .menu li .resume::after {
   content: "";
   top: 0;
   left: 0;
@@ -200,7 +210,7 @@ header .menu li button::after {
   -webkit-backdrop-filter: blur(4px);
   position: absolute;
 }
-header .menu li button:hover, header .menu li button.active {
+header .menu li .resume:hover, header .menu li .resume.active {
   background-color: hsla(164deg, 95%, 43%, 0.15);
   backdrop-filter: blur(4px);
   font-weight: 500;
@@ -282,7 +292,9 @@ section.main .main-wrapper {
   background: hsla(0deg, 0%, 0%, 0.6);
   border: none;
   border-radius: 5px;
-  backdrop-filter: blur(4px);
+  background-color: hsla(0deg, 0%, 0%, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 section.about {
@@ -532,9 +544,6 @@ section.other-projects {
   display: flex;
   align-items: center;
   margin-bottom: 6rem;
-}
-.other-projects .title h3 {
-  font-size: clamp(0.5rem, 2vw + 0.2rem, 1.8rem);
 }
 .other-projects .projects__wrapper {
   width: 100%;
@@ -816,4 +825,264 @@ footer .mail a {
 }
 footer .mail a:hover {
   color: hsl(164deg, 95%, 43%);
+}
+
+@media only screen and (max-width: 930px) {
+  .wrapper {
+    width: 95%;
+  }
+  header {
+    width: 95%;
+  }
+  header .navbar {
+    width: 100%;
+    padding-right: 1rem;
+  }
+  .resume {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    font-size: clamp(0.5rem, 1.5vw + 0.1rem, 1.1rem);
+  }
+  section.main {
+    height: 100vh;
+  }
+  section.about {
+    margin-top: 5rem;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  section.about .about-me p {
+    font-size: 0.7rem;
+  }
+  .skills {
+    width: 100%;
+    height: max-content;
+    flex-direction: column;
+  }
+  .skills__container {
+    width: clamp(18rem, 10vw + 15rem, 40rem);
+    max-width: clamp(18rem, 10vw + 15rem, 40rem);
+    height: max-content;
+    gap: 1rem;
+  }
+  .skills__title {
+    margin-top: 2rem;
+  }
+  .skills__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    height: max-content;
+  }
+  section.main-projects {
+    min-height: 100vw;
+  }
+  .content__title-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .socials svg {
+    width: 20px;
+    height: 20px;
+  }
+  .main-projects .project__container {
+    width: 85%;
+    margin-bottom: 3rem;
+  }
+  .main-projects .project__container .project__content {
+    width: 60%;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+  }
+  .main-projects .project__container .project__content .content__title {
+    margin-bottom: 0.5rem;
+  }
+  .main-projects .project__container .project__content .content__main-text {
+    font-size: 0.7rem;
+  }
+  .main-projects .project__container .project__content .content__tags {
+    gap: 0.5rem;
+  }
+  .main-projects .project__container .project__content .content__tags .tag {
+    padding: 0.2rem 0.6rem;
+  }
+  .other-projects .projects__wrapper {
+    gap: 2%;
+  }
+  .other-projects .project__container {
+    width: 33vh;
+    height: 33vh;
+  }
+  .other-projects .project__container .project__content .content__main-text {
+    font-size: 0.7rem;
+  }
+  .other-projects .project__container .project__content .content__tags .tag {
+    padding: 0.2rem 0.4rem;
+  }
+  .contact__container {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .contact__info-wrapper {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    width: 95%;
+  }
+  section.main {
+    gap: 2rem;
+  }
+  section.main .main-wrapper {
+    margin-left: 3%;
+  }
+  .title .welcome {
+    width: 30vh;
+    margin-bottom: 1.5rem;
+  }
+  .title .welcome h1 {
+    margin-bottom: 0.6rem;
+  }
+  .title .welcome p {
+    width: 40ch;
+    margin-bottom: 0.6rem;
+  }
+  .arrow-wrapper {
+    height: 30%;
+  }
+  section.main-projects {
+    min-height: 100vw;
+  }
+  .content__title-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .socials svg {
+    width: 18px;
+    height: 18px;
+  }
+  .main-projects .project__container {
+    width: 85%;
+    margin-bottom: 3rem;
+    flex-direction: column;
+  }
+  .main-projects .project__container .project__content {
+    width: 100%;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+  }
+  .main-projects .project__container .project__content .content__title {
+    margin-bottom: 0.5rem;
+  }
+  .main-projects .project__container .project__content .content__main-text {
+    font-size: 0.7rem;
+  }
+  .main-projects .project__container .project__content .content__tags {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .main-projects .project__container .project__content .content__tags .tag {
+    padding: 0.2rem 0.6rem;
+  }
+  .main-projects .project__container .project__preview {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .main-projects .project__container button {
+    position: relative;
+    padding: 0.3rem 0.4rem;
+    font-size: clamp(0.6rem, 2vw + 0.2rem, 1.1rem);
+  }
+  section.contact {
+    color: hsl(193deg, 100%, 78%);
+  }
+  .contact {
+    width: auto;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact__title {
+    margin-bottom: 3rem;
+  }
+  .contact__container {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .contact__info {
+    width: 100%;
+    height: 70%;
+    font-size: 0.7rem;
+  }
+  .contact__info-wrapper {
+    margin: 6%;
+    width: 80%;
+    flex-direction: column;
+  }
+  .contact__info-address, .contact__info-tel, .contact__info-mail {
+    gap: 1.2rem;
+  }
+  .contact__info::after {
+    width: 100%;
+  }
+  .contact__form {
+    width: 100%;
+  }
+  .contact__form .container {
+    width: 100%;
+    align-items: center;
+  }
+  .contact__form .form {
+    width: 90%;
+    align-items: center;
+  }
+  .contact__form .form-group {
+    width: 80%;
+  }
+  .contact__form .form-group label, .contact__form .form-group .label.active {
+    top: -1.4rem;
+    font-size: 0.9rem;
+  }
+  .contact__form .contact-btn {
+    margin-bottom: 2rem;
+  }
+  footer {
+    font-size: 0.8rem;
+    width: 95%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid hsl(193deg, 100%, 78%);
+    color: hsl(193deg, 100%, 78%);
+  }
+  footer .copyright {
+    font-size: 0.6rem;
+  }
+  footer .socials svg {
+    margin-right: 0.4rem;
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease-in;
+    fill: hsl(193deg, 100%, 78%);
+  }
+  footer .socials svg:hover, footer .socials svg:active {
+    fill: hsl(164deg, 95%, 43%);
+    transform: translateY(-3px);
+  }
+  footer .mail {
+    display: none;
+  }
 }/*# sourceMappingURL=styles.css.map */
