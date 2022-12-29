@@ -1,5 +1,5 @@
 "use strict";
- import Email from 'https://smtpjs.com/v3/smtp.js';
+
 
 
 const header = document.querySelector("haeder");
@@ -76,10 +76,8 @@ function sendEmail() {
         Body : message.value
     }).then(
         message => console.log(message)
-      )
-    .then(
-    formContainer.classList.add('hidden'))
-    .then(successMessage.classList.remove('hidden'));
+      );
+
     
 }
 
