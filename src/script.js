@@ -60,10 +60,10 @@ function validateForm(e) {
     successMessage.classList.remove('hidden');
 }
 
-// submitNextBtn.addEventListener('click', () => {
-//     formContainer.classList.remove('hidden');
-//     successMessage.classList.add('hidden');
-// })
+submitNextBtn.addEventListener('click', () => {
+    formContainer.classList.remove('hidden');
+    successMessage.classList.add('hidden');
+})
 
 function sendEmail() {
 
@@ -75,7 +75,9 @@ function sendEmail() {
         Subject : "Contact form",
         Body : message.value
     }).then(
-      message => alert(message)
+    //   message => alert(message)
+    formContainer.classList.add('hidden');
+    successMessage.classList.remove('hidden');
     );
 }
 
