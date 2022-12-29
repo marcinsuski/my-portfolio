@@ -44,7 +44,7 @@ const message = document.getElementById("message");
 const phone = document.getElementById("phone");
 const formContainer = document.querySelector('.container');
 const successMessage = document.querySelector('.submit-success');
-const submitNextBtn = documet.querySelector('.another');
+const submitNextBtn = document.querySelector('.another');
 
 form.addEventListener("submit", validateForm);
 

@@ -17,7 +17,7 @@ $preview-border:  hsl(193, 100%, 78%);
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: hsl(222, 62%, 15%);
+
 }
 
 a,
@@ -54,7 +54,7 @@ h3 {
 }
 
 h4 {
-    font-size: clamp(0.7rem, 3vw + 0.2rem, 1.6rem);
+    font-size: clamp(0.5rem, 1.5vw + 0.2rem, 1.6rem);
     font-weight: 500;
 }
 

@@ -2,7 +2,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: hsl(222deg, 62%, 15%);
 }
 
 a,
@@ -36,7 +35,7 @@ h3 {
 }
 
 h4 {
-  font-size: clamp(0.7rem, 3vw + 0.2rem, 1.6rem);
+  font-size: clamp(0.5rem, 1.5vw + 0.2rem, 1.6rem);
   font-weight: 500;
 }
 
@@ -618,7 +617,7 @@ section.contact {
 .contact {
   width: 100%;
   min-height: 90vh;
-  height: max-content;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -633,7 +632,8 @@ section.contact {
 .contact__info {
   position: relative;
   width: 50%;
-  height: 70%;
+  min-height: 70%;
+  height: max-content;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -642,6 +642,7 @@ section.contact {
 }
 .contact__info-wrapper {
   margin-top: 10%;
+  margin-bottom: 10%;
   margin-right: 10%;
   width: 50%;
   display: flex;
@@ -674,7 +675,7 @@ section.contact {
   z-index: -1;
 }
 .contact__form {
-  height: 70%;
+  height: max-content;
   width: 50%;
   display: flex;
   font-size: 0.8rem;
@@ -912,9 +913,6 @@ footer .mail a:hover {
     width: 60%;
     padding: 2rem 1.5rem 1.5rem 1.5rem;
   }
-  .main-projects .project__container .project__content .content__title {
-    margin-bottom: 0.5rem;
-  }
   .main-projects .project__container .project__content .content__main-text {
     font-size: 0.7rem;
   }
@@ -928,8 +926,8 @@ footer .mail a:hover {
     gap: 2%;
   }
   .other-projects .project__container {
-    width: 33vh;
-    height: 33vh;
+    width: 30vw;
+    height: 30vw;
   }
   .other-projects .project__container .project__content .content__main-text {
     font-size: 0.7rem;
