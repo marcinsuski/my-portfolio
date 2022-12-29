@@ -49,7 +49,7 @@ const submitNextBtn = document.querySelector('.another');
 form.addEventListener("submit", validateForm);
 
 function validateForm(e) {
-    // e.preventDefault();
+    e.preventDefault();
 
     validateInputs();
     // formContainer.classList.add('hidden');
