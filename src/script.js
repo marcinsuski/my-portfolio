@@ -57,7 +57,7 @@ function validateForm(e) {
     validateInputs();
     // formContainer.classList.add('hidden');
     // successMessage.classList.remove('hidden');
-    sendEmail()
+    sendEmail();
 }
 
 // submitNextBtn.addEventListener('click', () => {

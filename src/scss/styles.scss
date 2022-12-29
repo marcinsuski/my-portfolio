@@ -1100,6 +1100,7 @@ footer {
 
     .arrow-wrapper {
         height: 30%;
+        margin-bottom: 3rem;
     }
 
     section.main-projects {
@@ -1159,6 +1160,36 @@ footer {
                 font-size: clamp(0.6rem, 2vw + 0.2rem, 1.1rem);
             }
         }
+    }
+
+    .other-projects {
+        .projects__wrapper {
+            flex-direction: column;
+            align-items: center;
+            gap: 2%;
+        }
+
+        .project__container {
+            width: 60vw;
+            height: 60vw;
+
+            .project__content {
+                .content__main-text {
+                    font-size: 0.7rem;
+                }
+
+                .content__tags {
+                    .tag {
+                        padding: 0.2rem 0.4rem;
+                    }
+                }
+            }
+        }
+    }
+
+    h4 {
+        font-size: 1rem;
+        font-weight: 500;
     }
 
     section.contact {

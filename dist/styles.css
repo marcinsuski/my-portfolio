@@ -969,6 +969,7 @@ footer .mail a:hover {
   }
   .arrow-wrapper {
     height: 30%;
+    margin-bottom: 3rem;
   }
   section.main-projects {
     min-height: 100vw;
@@ -1014,6 +1015,25 @@ footer .mail a:hover {
     position: relative;
     padding: 0.3rem 0.4rem;
     font-size: clamp(0.6rem, 2vw + 0.2rem, 1.1rem);
+  }
+  .other-projects .projects__wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 2%;
+  }
+  .other-projects .project__container {
+    width: 60vw;
+    height: 60vw;
+  }
+  .other-projects .project__container .project__content .content__main-text {
+    font-size: 0.7rem;
+  }
+  .other-projects .project__container .project__content .content__tags .tag {
+    padding: 0.2rem 0.4rem;
+  }
+  h4 {
+    font-size: 1rem;
+    font-weight: 500;
   }
   section.contact {
     color: hsl(193deg, 100%, 78%);
