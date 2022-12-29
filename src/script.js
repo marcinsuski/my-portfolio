@@ -75,10 +75,12 @@ function sendEmail() {
         Subject : "Contact form",
         Body : message.value
     }).then(
-    //   message => alert(message)
-    formContainer.classList.add('hidden');
-    successMessage.classList.remove('hidden');
-    );
+        message => console.log(message)
+      )
+    .then(
+    formContainer.classList.add('hidden'))
+    .then(successMessage.classList.remove('hidden'));
+    
 }
 
 const setError = (element, message) => {
@@ -139,7 +141,7 @@ const validateInputs = () => {
         return false;
     }
 
-    console.log("success");
+
     return true;
 };
 
