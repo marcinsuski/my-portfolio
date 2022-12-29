@@ -46,7 +46,8 @@ const phone = document.getElementById("phone");
 form.addEventListener("submit", validateForm);
 
 function validateForm(e) {
-    
+    // e.preventDefault();
+
     validateInputs();
 }
 
