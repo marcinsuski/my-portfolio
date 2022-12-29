@@ -52,8 +52,8 @@ function validateForm(e) {
     // e.preventDefault();
 
     validateInputs();
-    formContainer.classList.add('hidden');
-    successMessage.classList.remove('hidden');
+    // formContainer.classList.add('hidden');
+    // successMessage.classList.remove('hidden');
 }
 
 submitNextBtn.addEventListener('click', () => {
