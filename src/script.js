@@ -1,4 +1,7 @@
 "use strict";
+
+
+
 const header = document.querySelector("haeder");
 const sectionOne = document.querySelector(".about");
 const sections = document.querySelectorAll("section");
@@ -54,12 +57,29 @@ function validateForm(e) {
     validateInputs();
     // formContainer.classList.add('hidden');
     // successMessage.classList.remove('hidden');
+    sendEmail()
 }
 
 // submitNextBtn.addEventListener('click', () => {
 //     formContainer.classList.remove('hidden');
 //     successMessage.classList.add('hidden');
 // })
+
+function sendEmail() {
+    
+    var Email = { send: function (a) { return new Promise(function (n, e) { a.nocache = Math.floor(1e6 * Math.random() + 1), a.Action = "Send"; var t = JSON.stringify(a); Email.ajaxPost("https://smtpjs.com/v3/smtpjs.aspx?", t, function (e) { n(e) }) }) }, ajaxPost: function (e, n, t) { var a = Email.createCORSRequest("POST", e); a.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), a.onload = function () { var e = a.responseText; null != t && t(e) }, a.send(n) }, ajax: function (e, n) { var t = Email.createCORSRequest("GET", e); t.onload = function () { var e = t.responseText; null != n && n(e) }, t.send() }, createCORSRequest: function (e, n) { var t = new XMLHttpRequest; return "withCredentials" in t ? t.open(e, n, !0) : "undefined" != typeof XDomainRequest ? (t = new XDomainRequest).open(e, n) : t = null, t } };
+
+
+    Email.send({
+        SecureToken : "a9e0425a-3403-484a-a28c-50ac72e160db",
+        To : 'suski.marcin@gmail.com',
+        From : email.value,
+        Subject : "Contact form",
+        Body : message.value
+    }).then(
+      message => alert(message)
+    );
+}
 
 const setError = (element, message) => {
     const inputControl = element.parentElement;
