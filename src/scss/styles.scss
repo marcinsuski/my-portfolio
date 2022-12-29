@@ -1,7 +1,6 @@
 @use "config" as *;
 
 body {
-
     height: 100%;
     font-family: "Josefin Sans", sans-serif;
     font-size: 100%;
@@ -541,10 +540,6 @@ section.main-projects {
     }
 }
 
-.hidden {
-    display: none;
-}
-
 section.other-projects {
     width: 100%;
     color: $text-primary;
@@ -731,7 +726,35 @@ section.contact {
             flex-direction: column;
             justify-content: space-beetween;
             align-items: flex-end;
+
+            
         }
+
+        .submit-success {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 80%;
+
+            .success-message {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            button {
+                margin-top: 1rem;
+            }
+        }
+
+        .hidden {
+            display: none;
+
+        }
+
+
 
         .form {
             width: 100%;
@@ -909,11 +932,11 @@ footer {
     header {
         width: 95%;
 
-    .navbar {
-        width: 100%;
-        padding-right: 1rem;
+        .navbar {
+            width: 100%;
+            padding-right: 1rem;
+        }
     }
-}
 
     .resume {
         position: relative;
@@ -1050,8 +1073,6 @@ footer {
     .wrapper {
         width: 95%;
     }
-
-
 
     section.main {
         gap: 2rem;
@@ -1215,7 +1236,6 @@ footer {
         }
     }
 
-
     footer {
         font-size: 0.8rem;
         width: 95%;
@@ -1225,32 +1245,28 @@ footer {
         justify-content: space-between;
         border-top: 2px solid $text-primary;
         color: $text-primary;
-    
+
         .copyright {
             font-size: 0.6rem;
         }
 
         .socials {
-           
+            & svg {
+                margin-right: 0.4rem;
+                width: 20px;
+                height: 20px;
+                transition: all 0.3s ease-in;
+                fill: $text-primary;
 
-        & svg {
-            margin-right: 0.4rem;
-            width: 20px;
-            height: 20px;
-            transition: all 0.3s ease-in;
-            fill: $text-primary;
-         
-    
-            &:hover,
-            &:active {
-                fill: $text-link;
-                transform: translateY(-3px);
+                &:hover,
+                &:active {
+                    fill: $text-link;
+                    transform: translateY(-3px);
+                }
             }
         }
 
-    }
-
-        .mail  {
+        .mail {
             display: none;
         }
     }

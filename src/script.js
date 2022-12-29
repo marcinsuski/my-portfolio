@@ -42,6 +42,9 @@ const inputName = document.getElementById("name");
 const email = document.getElementById("email");
 const message = document.getElementById("message");
 const phone = document.getElementById("phone");
+const formContainer = document.querySelector('.container');
+const successMessage = document.querySelector('.submit-success');
+const submitNextBtn = documet.querySelector('.another');
 
 form.addEventListener("submit", validateForm);
 
@@ -49,7 +52,14 @@ function validateForm(e) {
     // e.preventDefault();
 
     validateInputs();
+    formContainer.classList.add('hidden');
+    successMessage.classList.remove('hidden');
 }
+
+submitNextBtn.addEventListener('click', () => {
+    formContainer.classList.remove('hidden');
+    successMessage.classList.add('hidden');
+})
 
 const setError = (element, message) => {
     const inputControl = element.parentElement;

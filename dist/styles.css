@@ -520,10 +520,6 @@ section.main-projects {
   transform: translateY(-50%);
 }
 
-.hidden {
-  display: none;
-}
-
 section.other-projects {
   width: 100%;
   color: hsl(193deg, 100%, 78%);
@@ -688,6 +684,25 @@ section.contact {
   flex-direction: column;
   justify-content: space-beetween;
   align-items: flex-end;
+}
+.contact__form .submit-success {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+.contact__form .submit-success .success-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact__form .submit-success button {
+  margin-top: 1rem;
+}
+.contact__form .hidden {
+  display: none;
 }
 .contact__form .form {
   width: 100%;
