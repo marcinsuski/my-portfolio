@@ -691,31 +691,36 @@ section.contact {
 }
 .contact__form .form-group {
   width: 80%;
+  height: max-content;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
-.contact__form .form-group label {
+.contact__form .form-group label, .contact__form .form-group .label.active {
   position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0.5rem;
-  color: hsl(0deg, 0%, 100%);
+  padding: 0rem;
   font-weight: 400;
-  font-size: 0.7rem;
   letter-spacing: 0.1rem;
   pointer-events: none;
   transition: 0.5s;
-}
-.contact__form .form-group input:focus, .contact__form .form-group textarea:focus {
-  border: 2px solid hsl(164deg, 95%, 43%);
-}
-.contact__form .form-group input:focus + label, .contact__form .form-group input:valid + label, .contact__form .form-group textarea:focus + label, .contact__form .form-group textarea:valid + label {
   top: -1.5rem;
   font-size: 0.9rem;
   padding: 0;
   left: 0;
   color: hsl(164deg, 95%, 43%);
 }
+.contact__form .form-group input:focus, .contact__form .form-group textarea:focus {
+  border: 2px solid hsl(164deg, 95%, 43%);
+}
+.contact__form .form-group input:not(:focus) + label, .contact__form .form-group input:not(:valid) + label, .contact__form .form-group textarea:not(:focus) + label, .contact__form .form-group textarea:not(:valid) + label {
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  color: hsl(0deg, 0%, 100%);
+}
 .contact__form input {
+  position: relative;
   height: 2.2rem;
   border-radius: 5px;
   width: 100%;
@@ -723,6 +728,36 @@ section.contact {
   color: hsl(193deg, 100%, 78%);
   border: 1px solid hsl(193deg, 100%, 78%);
   background-color: hsla(0deg, 0%, 0%, 0.6);
+}
+.contact__form input::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0.2rem;
+  background-image: url("../src/images/error.svg");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: auto;
+  pointer-events: none;
+}
+.contact__form .form-group.success input,
+.contact__form .form-group.success textarea {
+  border-color: hsl(164deg, 95%, 43%);
+}
+.contact__form .form-group.error input, .contact__form .form-group.error textarea {
+  border-color: hsl(0deg, 100%, 63%);
+}
+.contact__form .form-group.error.error {
+  font-weight: 500;
+  display: flex;
+  justify-content: flex-end;
+  color: hsl(0deg, 100%, 63%);
+  font-size: 0.6rem;
+}
+.contact__form .form-group.error + input::after {
+  opacity: 1;
 }
 .contact__form textarea {
   height: 8rem;
@@ -737,15 +772,22 @@ section.contact {
   outline: transparent;
 }
 .contact__form .contact-btn {
+  width: fit-content;
+  padding: 0rem 2rem;
+  font-size: 1rem;
+  border: 2px solid;
+  border-radius: 50px;
+  background-color: hsla(0deg, 0%, 5%, 0.2);
+  backdrop-filter: blur(4px);
+  color: hsl(164deg, 95%, 43%);
   transition: ease 0.3s;
-  margin-bottom: 10%;
-  outline: transparent;
+  font-weight: 500;
+  letter-spacing: 0.15rem;
 }
 .contact__form .contact-btn:hover, .contact__form .contact-btn.active {
   background-color: hsla(164deg, 95%, 43%, 0.15);
   backdrop-filter: blur(4px);
   font-weight: 500;
-  cursor: pointer;
 }
 
 footer {

@@ -3,11 +3,11 @@ const header = document.querySelector("haeder");
 const sectionOne = document.querySelector(".about");
 const sections = document.querySelectorAll("section");
 const faders = document.querySelectorAll(".fade-in");
-const sliders = document.querySelectorAll('.slide-in');
+const sliders = document.querySelectorAll(".slide-in");
 
 const appearOptions = {
     threshold: 0.7,
-    rootMargin: '0px 0px 0px 0px'
+    rootMargin: "0px 0px 0px 0px",
 };
 
 const appearOnScroll = new IntersectionObserver(function (
@@ -18,7 +18,7 @@ const appearOnScroll = new IntersectionObserver(function (
         if (!entry.isIntersecting) {
             return;
         } else {
-            console.log(entry.target);
+            // console.log(entry.target);
             entry.target.classList.add("appear");
             appearOnScroll.unobserve(entry.target);
         }
@@ -34,58 +34,123 @@ sliders.forEach((slider) => {
     appearOnScroll.observe(slider);
 });
 
-// const options = {
-//     root: null,
-//     threshold: 0.25,
-//     rootMargin: "0px",
-// };
+// form validation
 
-// const observer = new IntersectionObserver(function (entries, observer) {
-//     entries.forEach((entry) => {
-//         if (!entry.isIntersecting) {
-//             return;
-//         }
-//         console.log(entry.target);
-//         // entry.target.classList.toggle('fade-in')
-//         // observer.unobserve(entry.target);
-//     });
-// }, options);
+const form = document.querySelector(".form");
 
-// sections.forEach((section) => {
-//     observer.observe(section);
-// });
-// observer.observe(sectionOne);
+const inputName = document.getElementById("name");
+const email = document.getElementById("email");
+const message = document.getElementById("message");
+const phone = document.getElementById("phone");
 
-// (function() {
+form.addEventListener("submit", validateForm);
 
-//     let doc = document.documentElement;
-//     let w = window;
-//     let prevScroll;
-//     let prevDirection;
+function validateForm(e) {
+    e.preventDefault();
 
-//     let curScroll = prevScroll = w.scrollY || doc.scrollTop;
-//     let curDirection = prevDirection = 0;
+    validateInputs();
+}
 
-//     let checkScroll = function() {
-//         curScroll = prevScroll = w.scrollY || doc.scrollTop;
-//         if (curScroll > prevScroll) {
-//             curDirection = 2
-//          } else {
-//             curDirection = 1;
-//          }
+const setError = (element, message) => {
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector(".error");
 
-//         if (curDirection !== prevDirection) {
-//             toggleHeader();
-//          }
+    errorDisplay.innerText = message;
+    inputControl.classList.add("error");
+    inputControl.classList.remove("success");
+};
 
-//     let toggleHeader = function() {
-//         if (curDirection === 2) {
-//             header.classList.add('nav-scrolled');
-//         } else if (curDirection === 1) {
-//             header.classList.remove('nav-scrolled');
-//         }
-//     }
+const setSuccess = (element) => {
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector(".error");
 
-//     window.addEventListener('scroll', checkScroll);
-//     }
-// })();
+    errorDisplay.innerText = "";
+    inputControl.classList.add("success");
+    inputControl.classList.remove("error");
+};
+
+const isValidEmail = (email) => {
+    const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    return re.test(String(email).toLowerCase());
+};
+
+const validateInputs = () => {
+    const nameValue = inputName.value.trim();
+    const emailValue = email.value.trim();
+    const messageValue = message.value.trim();
+    const phoneValue = phone.value.trim();
+
+    // Validate the form fields
+    if (nameValue == "") {
+        setError(inputName, "name required");
+  
+    } else {
+        setSuccess(inputName);
+    }
+
+    if (emailValue == "") {
+        setError(email, "e-mail required");
+       
+    } else if (!isValidEmail(emailValue)) {
+        setError(email, "valide e-mail required (containing @)");
+      
+    } else {
+        setSuccess(email);
+    }
+
+    if (messageValue == "") {
+        setError(message, "Please entere a message");
+   
+    } else {
+        setSuccess(message);
+    }
+
+    if (nameValue == "" || emailValue == "" || !isValidEmail(emailValue) || messageValue == ""){
+        return false;
+    }
+
+    console.log("success");
+    return true;
+};
+
+inputName.addEventListener("change", () => {
+    const parent = inputName.parentElement;
+    const sibling = parent.querySelector(".label");
+    if (inputName.value !== "") {
+        sibling.classList.add("active");
+    } else {
+        sibling.classList.remove('active');
+    }
+});
+
+email.addEventListener("change", () => {
+    const parent = email.parentElement;
+    const sibling = parent.querySelector(".label");
+    if (email.value !== "") {
+        sibling.classList.add("active");
+    } else {
+        sibling.classList.remove('active');
+    }
+});
+
+phone.addEventListener("change", () => {
+    const parent = phone.parentElement;
+    const sibling = parent.querySelector(".label");
+    if (phone.value !== "") {
+        
+        sibling.classList.add("active");
+    } else {
+        sibling.classList.remove('active');
+    }
+});
+
+message.addEventListener("change", () => {
+    const parent = message.parentElement;
+    const sibling = parent.querySelector(".label");
+    if (message.value !== "") {
+        
+        sibling.classList.add("active");
+    } else {
+        sibling.classList.remove('active');
+    }
+});

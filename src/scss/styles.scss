@@ -1,7 +1,5 @@
 @use "config" as *;
 
-
-
 body {
     width: 100vw;
     height: 100%;
@@ -64,30 +62,27 @@ section {
 }
 
 .slide-in {
-
     .from-left {
         transform: translateX(-20%);
         opacity: 0;
     }
-    
+
     .from-right {
         transform: translateX(20%);
         opacity: 0;
     }
-    
+
     .from-left,
     .from-right {
         transition: opacity 0.2s ease-in, transform 0.6s ease-in;
     }
-    
+
     .from-left.appear,
     .from-right.appear {
         transform: translateX(0);
         opacity: 1;
     }
 }
-
-
 
 header {
     width: 100%;
@@ -261,13 +256,17 @@ section.main {
     }
 }
 
-
 @keyframes slide {
-    0% { transform: translateY(-20px)}
-    50%   { transform: translateY(0)}
-    100% { transform: translateY(-20px)}
-  }
-
+    0% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
 
 .card {
     background: $bg-glassy;
@@ -388,7 +387,6 @@ section.skills {
         }
     }
 }
-
 
 section.main-projects {
     width: 100%;
@@ -738,39 +736,50 @@ section.contact {
 
         .form-group {
             width: 80%;
+            height: max-content;
             position: relative;
+            display: flex;
+            flex-direction: column;
+          
 
-            & label {
+            & label,
+            & .label.active  {
                 position: absolute;
-                top: 0;
-                left: 0;
-                padding: 0.5rem;
-                color: $text-header;
+                padding: 0rem;
                 font-weight: 400;
-                font-size: 0.7rem;
                 letter-spacing: 0.1rem;
                 pointer-events: none;
                 transition: 0.5s;
-            }
-
-            & input:focus,
-            & textarea:focus {
-                border: 2px solid $text-link;
-            }
-
-            & input:focus + label,
-            & input:valid + label,
-            & textarea:focus + label,
-            & textarea:valid + label {
                 top: -1.5rem;
                 font-size: 0.9rem;
                 padding: 0;
                 left: 0;
                 color: $text-link;
             }
+            
+        
+
+            & input:focus,
+            & textarea:focus {
+                border: 2px solid $text-link;
+            }
+
+
+            & input:not(:focus) + label,
+            & input:not(:valid) + label,
+            & textarea:not(:focus) + label,
+            & textarea:not(:valid) + label
+            {
+                top: 0;
+                left: 0;
+                padding: 0.5rem;
+                font-size: 0.7rem;
+                color: $text-header;
+            }
         }
 
         input {
+            position: relative;
             height: 2.2rem;
             border-radius: 5px;
             width: 100%;
@@ -778,6 +787,53 @@ section.contact {
             color: $text-primary;
             border: 1px solid $text-primary;
             background-color: $bg-glassy;
+        
+            
+        }
+
+        input::after {
+            content:"";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0.2rem;
+            background-image: url("../src/images/error.svg");
+            background-position: right;
+            background-repeat: no-repeat;
+            background-size: auto;
+            // opacity: 0;
+            pointer-events: none;
+        
+        }
+
+        .form-group.success input, 
+        .form-group.success textarea {
+            border-color: $text-link;
+      
+        }
+
+        .form-group.error {
+            & input,
+            & textarea {
+                border-color: $text-error;
+            }
+
+            &.error {
+            
+                font-weight: 500;
+                display: flex;
+                justify-content: flex-end;
+                color: $text-error;
+                font-size: 0.6rem;
+                
+                
+            }
+            & + input::after {
+                opacity: 1;
+
+            }
+       
         }
 
         textarea {
@@ -795,16 +851,23 @@ section.contact {
         }
 
         .contact-btn {
+            width: fit-content;
+            padding: 0rem 2rem;
+            font-size: 1rem;
+            border: 2px solid;
+            border-radius: 50px;
+            background-color: hsla(0, 0%, 5%, 0.2);
+            backdrop-filter: blur(4px);
+            color: $button;
             transition: ease 0.3s;
-            margin-bottom: 10%;
-            outline: transparent;
+            font-weight: 500;
+            letter-spacing: 0.15rem;
 
             &:hover,
             &.active {
                 background-color: $button-bg-hover;
                 backdrop-filter: blur(4px);
                 font-weight: 500;
-                cursor: pointer;
             }
         }
     }

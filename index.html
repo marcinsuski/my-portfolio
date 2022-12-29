@@ -783,31 +783,36 @@
                     </div>
                     <div class="contact__form slide-in from-right">
                         <div class="container">
-                            <div class="form">
-                                <div class="form-group">
-                                    <input type="text" required />
-                                    <label for="name">Name</label>
+                            <form class="form" action="mailto:suski.marcin@gmail.com" method="POST">
+                                <div class="form-group name">
+                                    <input type="text" class="input-control" id="name" />
+                                    <label for="name" class="label">Name</label>
+                                    <div class="error"></div>
+                                </div>
+                                <div class="form-group email">
+                                    <input type="text"  class="input-control" id="email" />
+                                    <label for="email" class="label">e-mail</label>
+                                    <div class="error"></div>
+                                </div>
+                                <div class="form-group phone">
+                                    <input type="tel"  class="input-control" id="phone" />
+                                    <label for="phone" class="label">phone (optional)</label>
+                                    <div class="error"></div>
+                                </div>
+                        
+                                <div class="form-group message" placeholder=" ">
+                                    <textarea id="message" ></textarea>
+                                    <label for="message" class="label">message</label>
+                                    <div class="error"></div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" required />
-                                    <label for="email">e-mail</label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" required />
-                                    <label for="phone">phone</label>
-                                </div>
-                                <div class="form-group">
-                                    <textarea required></textarea>
-                                    <label for="message">message</label>
-                                </div>
-                                <button
+                                <input
                                     type="submit"
                                     value="send"
                                     class="contact-btn"
-                                >
-                                    Send
-                                </button>
-                            </div>
+                                /></div>
+                                                                   
+                                </form>
                         </div>
                     </div>
                 </div>
