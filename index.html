@@ -812,6 +812,24 @@
                                 action="https://formsubmit.io/send/suski.marcin@gmail.com"
                                 method="POST"
                             >
+                                   <!-- Honeypot -->
+                                   <input
+                                   name="_honeypot"
+                                   type="text"
+                                   style="display: none"
+                               />
+                               <!-- disable captcha -->
+                               <input
+                                   type="hidden"
+                                   name="_captcha"
+                                   value="false"
+                               />
+                               <!-- redirect to custom site -->
+                               <input
+                                   type="hidden"
+                                   name="_next"
+                                   value="https://github.com/marcinsuski/my-portfolio/success.html"
+                               />
                                 <div class="form-group name">
                                     <input
                                         type="text"
@@ -857,24 +875,7 @@
                                     >
                                     <div class="error"></div>
                                 </div>
-                                <!-- Honeypot -->
-                                <input
-                                    name="_honeypot"
-                                    type="text"
-                                    style="display: none"
-                                />
-                                <!-- disable captcha -->
-                                <input
-                                    type="hidden"
-                                    name="_captcha"
-                                    value="false"
-                                />
-                                <!-- disable redirect -->
-                                <input
-                                    type="hidden"
-                                    name="_next"
-                                    value="https://github.com/marcinsuski/my-portfolio/success.html"
-                                />
+                         
                                 <div class="form-group">
                                     <input
                                         type="submit"
