@@ -56,10 +56,10 @@ function validateForm(e) {
     // successMessage.classList.remove('hidden');
 }
 
-submitNextBtn.addEventListener('click', () => {
-    formContainer.classList.remove('hidden');
-    successMessage.classList.add('hidden');
-})
+// submitNextBtn.addEventListener('click', () => {
+//     formContainer.classList.remove('hidden');
+//     successMessage.classList.add('hidden');
+// })
 
 const setError = (element, message) => {
     const inputControl = element.parentElement;
