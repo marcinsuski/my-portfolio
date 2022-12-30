@@ -557,8 +557,8 @@ section.other-projects {
   gap: 5%;
 }
 .other-projects .project__container {
-  width: 30vh;
-  height: 30vh;
+  width: 300px;
+  height: 300px;
   margin-bottom: 3rem;
   position: relative;
 }
@@ -607,6 +607,7 @@ section.other-projects {
 .other-projects .project__container::before {
   transform: translateY(-50%);
   background-color: hsla(0deg, 0%, 0%, 0.6);
+  backdrop-filter: blur(8px);
   border-radius: 50%;
   border: none;
 }
@@ -738,7 +739,7 @@ section.contact {
   font-size: 0.7rem;
   color: hsl(0deg, 0%, 100%);
 }
-.contact__form input {
+.contact__form input, .contact__form textarea {
   position: relative;
   height: 2.2rem;
   border-radius: 5px;
@@ -979,8 +980,8 @@ footer .mail a:hover {
     gap: 2%;
   }
   .other-projects .project__container {
-    width: 30vw;
-    height: 30vw;
+    width: 250px;
+    height: 250px;
   }
   .other-projects .project__container .project__content .content__main-text {
     font-size: 0.7rem;
