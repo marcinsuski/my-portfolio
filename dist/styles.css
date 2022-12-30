@@ -143,7 +143,7 @@ header {
   font-weight: 400;
 }
 header .navbar {
-  width: 70%;
+  width: 100%;
   display: flex;
   align-items: space-between;
 }
@@ -900,12 +900,14 @@ footer .mail a:hover {
   }
   header .navbar {
     width: 100%;
-    padding-right: 1rem;
   }
   .resume {
     position: relative;
     padding: 0.3rem 0.5rem;
     font-size: clamp(0.5rem, 1.5vw + 0.1rem, 1.1rem);
+  }
+  .arrow-wrapper {
+    height: 30%;
   }
   section.main {
     height: 100vh;
@@ -993,8 +995,100 @@ footer .mail a:hover {
   }
 }
 @media only screen and (max-width: 600px) {
+  body, html {
+    overflow-x: hidden;
+  }
   .wrapper {
     width: 95%;
+  }
+  header {
+    justify-content: flex-start;
+  }
+  header .navbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 400ms ease-in-out;
+    transform: translateX(100%);
+    flex-direction: column;
+    border-radius: 5px 0 0 px;
+    background: black;
+    z-index: 10;
+  }
+  header .menu {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    gap: 1.5rem;
+  }
+  header .menu ul {
+    height: auto;
+    display: flex;
+    gap: clamp(0.8rem, 3vw + 0.8rem, 3rem);
+    padding-right: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  header .menu li {
+    height: 1.5rem;
+  }
+  header .menu li .resume {
+    margin-top: 1.5rem;
+  }
+  .hamburger {
+    display: block;
+    position: relative;
+  }
+  .hamburger,
+.hamburger::before,
+.hamburger::after {
+    width: 2rem;
+    height: 3px;
+    background-color: hsl(164deg, 95%, 43%);
+    border-radius: 20px;
+    transition: transform 400ms ease-in-out, opacity 200ms linear;
+  }
+  .hamburger::before,
+.hamburger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+  .hamburger::before {
+    bottom: 8px;
+  }
+  .hamburger::after {
+    top: 8px;
+  }
+  .nav__toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border-radius: 0;
+    height: 35px;
+    width: 35px;
+    padding: 0;
+    border: none;
+    z-index: 20;
+  }
+  .nav-open .navbar {
+    transform: translateX(0);
+  }
+  .nav-open .hamburger {
+    transform: rotate(45deg);
+  }
+  .nav-open .hamburger::before {
+    opacity: 0;
+  }
+  .nav-open .hamburger::after {
+    transform: rotate(90deg) translate(-8px);
   }
   section.main {
     gap: 2rem;
