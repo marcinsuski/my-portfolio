@@ -1,5 +1,9 @@
 @use "config" as *;
 
+// html {
+
+// }
+
 body {
     height: 100%;
     font-family: "Josefin Sans", sans-serif;
@@ -55,6 +59,12 @@ button {
         backdrop-filter: blur(4px);
         font-weight: 500;
     }
+
+   
+}
+
+.nav__toggle {
+    display: none;
 }
 
 .wrapper {
@@ -1243,7 +1253,7 @@ header {
 
 
 .nav__toggle {
-    // display: none;
+    display: block;
     
     position: absolute;
     top: 1rem;

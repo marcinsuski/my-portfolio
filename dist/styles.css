@@ -11,6 +11,7 @@ a,
 }
 
 html {
+  background-color: hsl(222deg, 62%, 15%);
   scroll-behavior: smooth;
 }
 
@@ -89,6 +90,10 @@ button:hover, button.active {
   background-color: hsla(164deg, 95%, 43%, 0.15);
   backdrop-filter: blur(4px);
   font-weight: 500;
+}
+
+.nav__toggle {
+  display: none;
 }
 
 .wrapper {
@@ -1068,6 +1073,7 @@ footer .mail a:hover {
     top: 8px;
   }
   .nav__toggle {
+    display: block;
     position: absolute;
     top: 1rem;
     right: 1rem;
