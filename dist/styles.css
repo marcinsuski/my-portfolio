@@ -56,6 +56,9 @@ body {
   align-items: center;
   justify-content: center;
 }
+body.modal-open {
+  overflow-y: hidden;
+}
 
 button {
   position: relative;
@@ -688,22 +691,6 @@ section.contact {
   justify-content: space-beetween;
   align-items: flex-end;
 }
-.contact__form .submit-success {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.contact__form .submit-success .success-message {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.contact__form .submit-success button {
-  margin-top: 1rem;
-}
 .contact__form .hidden {
   display: none;
 }
@@ -817,6 +804,61 @@ section.contact {
   font-weight: 500;
 }
 
+.submit-after {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: hsla(0deg, 0%, 0%, 0.6);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.submit-after .prompt-message {
+  width: min(70%, 350px);
+  height: min(30vh, 150px);
+  border: 1px solid hsl(164deg, 95%, 43%);
+  border-radius: 5px;
+  background-color: hsla(0deg, 0%, 0%, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-name: animatemodal;
+  animation-duration: 0.4s;
+  z-index: 15;
+}
+.submit-after .prompt-message .prompt-title {
+  margin-top: 0.5rem;
+}
+.submit-after .prompt-message .prompt {
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+}
+.submit-after button {
+  font-size: 0.7rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Modal Animation */
+@keyframes animatemodal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 footer {
   font-size: 0.8rem;
   width: 95%;
@@ -843,6 +885,10 @@ footer .mail a {
 }
 footer .mail a:hover {
   color: hsl(164deg, 95%, 43%);
+}
+
+.hidden {
+  display: none;
 }
 
 @media only screen and (max-width: 930px) {

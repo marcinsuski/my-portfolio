@@ -11,6 +11,8 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="./dist/styles.css" />
+        <script src="https://smtpjs.com/v3/smtp.js">
+        </script>
         <title>Marcin Suski</title>
     </head>
     <body>
@@ -886,17 +888,18 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="submit-success hidden">
-                            <div class="success-message">
-                                <h2>Thank You</h2>
-                                <p>Your e-mail has been sent.</p>
-                                <p>I will get back to You as soon as possible.</p>
-                                <button class="another">Send again</button>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
+              
             </section>
+            <div class="submit-after hidden">
+                <div class="prompt-message">
+                    <h3 class="prompt-title">Thank You!</h3>
+                    <p class="prompt"></p>
+                    <button class="close">Close</button>
+                </div>
+            </div>
         </div>
 
         <!-- Footer -->
@@ -961,7 +964,7 @@
         </footer>
 
         <script src="./src/script.js"></script>
-        <script src="https://smtpjs.com/v3/smtp.js">
-        </script>
+       
     </body>
 </html>
+

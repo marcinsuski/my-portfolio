@@ -16,7 +16,11 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    // overflow-x: hidden;
+    
+
+    &.modal-open {
+        overflow-y: hidden;
+      }
 }
 
 button {
@@ -733,25 +737,7 @@ section.contact {
             
         }
 
-        .submit-success {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-
-            .success-message {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-
-            button {
-                margin-top: 1rem;
-            }
-        }
-
+        
         .hidden {
             display: none;
 
@@ -892,6 +878,78 @@ section.contact {
     }
 }
 
+.submit-after {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $bg-glassy;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+
+
+
+.prompt-message {
+    width: min(70%, 350px);
+    height: min(30vh, 150px);
+    border: 1px solid $text-link;
+    border-radius: 5px;
+    background-color: $bg-glassy;
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-name: animatemodal;
+    animation-duration: 0.4s;
+    z-index: 15;
+
+    .prompt-title {
+    
+        margin-top: 0.5rem;
+    }
+
+    .prompt {
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+
+    }
+}
+
+button {
+
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+}
+}
+
+
+/* Modal Animation */
+
+@keyframes animatemodal {
+    from {
+     
+        opacity: 0;
+    }
+    to {
+   
+        opacity: 1;
+    }
+}
+
+
+
 footer {
     font-size: 0.8rem;
     width: 95%;
@@ -922,6 +980,12 @@ footer {
             color: $text-link;
         }
     }
+}
+
+  
+.hidden {
+    display: none;
+
 }
 
 // middle screens
