@@ -60,6 +60,8 @@ function validateForm(e) {
 
 }
 
+
+//send email function and feedback modal for user
 const sendEmail =() => {
 let body = `
 <b>Name: </b>~${inputName.value}
@@ -114,6 +116,7 @@ const closeBtn = document.querySelector('.close');
       
 }
 
+// closing modal function
 const closePrompt = (e) => {
     if (e.target === afterSubmit) {
         afterSubmit.classList.add('hidden')
@@ -122,6 +125,8 @@ const closePrompt = (e) => {
 };
 
 
+//handling error and success validation
+// TODO: cleanup feedback styling, it is in two places at least
 const setError = (element, message) => {
     const inputControl = element.parentElement;
     const errorDisplay = inputControl.querySelector(".error");
@@ -140,18 +145,21 @@ const setSuccess = (element) => {
     inputControl.classList.remove("error");
 };
 
+
+
+//email validation
 const isValidEmail = (email) => {
     const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     return re.test(String(email).toLowerCase());
 };
 
+// Main validation function 
 const validateInputs = () => {
     const nameValue = inputName.value.trim();
     const emailValue = email.value.trim();
     const mailContentValue = mailContent.value.trim();
     const phoneValue = phone.value.trim();
 
-    // Validate the form fields
     if (nameValue == "") {
         setError(inputName, "name required");
   
@@ -180,9 +188,14 @@ const validateInputs = () => {
         return false;
     }
 
+    //if validation went through, send email
     sendEmail();
-    // return true;
+   
 };
+
+
+// setting  feedback styling for form inputs
+// TODO: restructure to avoid code repetition
 
 inputName.addEventListener("change", () => {
     const parent = inputName.parentElement;
