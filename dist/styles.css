@@ -1043,6 +1043,7 @@ footer .mail a:hover {
   }
   header .menu li {
     height: 1.5rem;
+    font-size: 1rem;
   }
   header .menu li .resume {
     margin-top: 1.5rem;

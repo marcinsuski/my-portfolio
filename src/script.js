@@ -64,7 +64,7 @@ function validateForm(e) {
 //send email function and feedback modal for user
 const sendEmail =() => {
 let body = `
-<b>Name: </b>~${inputName.value}
+<b>Name: </b>${inputName.value}
 <br>
 <b>Email: </b>${email.value}
 <br>
