@@ -340,6 +340,8 @@ section.about {
 }
 
 section.skills {
+    height: max-content;
+    margin: 4rem 0;
     color: $text-primary;
     display: flex;
     justify-content: center;
@@ -351,15 +353,25 @@ section.skills {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.5rem;
 
     .slider__title {
+        height: 2.5rem;
         display: flex;
+        align-items: flex-end;
         justify-content: center;
         gap: 2rem;
 
         &-item {
             font-size: 1.3rem;
+            transition: all 300ms ease-in;
+            cursor: pointer;
+        }
+        .active {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: $text-header;
+            transform: scale(1.1) translateY(-3px);
         }
     }
 
@@ -373,7 +385,8 @@ section.skills {
             display: flex;
             justify-content: center;
             align-content: center;
-            align-items: center;                
+            align-items: center;
+            overflow: hidden;
         }
 
         &__item {
@@ -385,64 +398,94 @@ section.skills {
             align-content: center;
             gap: 1rem;
             flex-wrap: wrap;
+            transition: all 300ms ease-in;
 
-            img{
+            
+
+            img {
                 height: 60px;
                 // width: 100px;
             }
 
             .other-skills {
-                position: relative;
-                width: fit-content;
-                padding: 0.3rem;
-                border: 1px solid white;
-             
-                &::before,
-                &::after {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    // transform:translateY(-50%);                                  
-                }
-                &::before {
-                    left: 0;
-                    background-image: url('../images/tag.svg');
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                }
-                &::before {
-                    right: 0;
-                    background-image: url('../images/tag-close.svg');
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                   fill: white;
-                }
+                // border: 1px solid $text-primary;
+                width: 180px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                gap: 0.3rem;
             }
+
+            
+          
         }
+
         .item-1 {
             // display: flex;
             display: none;
-
+            transform:translateX(-100%);
+            transition: all 300ms ease-in;
         }
         .item-2 {
             display: none;
-                //  display: flex;
+            transform:translateX(-100%);
+            //  display: flex;
         }
         .item-3 {
             display: none;
-                //  display: flex;
+            transform:translateX(-100%);
+            //  display: flex;
         }
         .item-4 {
-            // display: none;
-                 display: flex;
+            display: none;
+            transform:translateX(-100%);
+            //  display: flex;
+            padding: 1rem;
         }
 
+        .active {
+            display: flex;
+            // transform: translateX(0%);
+            animation: slideIn ease-in 300ms forwards;
+        }
 
-
+        .inactive {
+            // transform: translateX(100%);
+            animation: slideOut ease-in 300ms forwards;
+            display: none;
+        }
     }
 }
+
+@keyframes slideIn {
+    0% {
+        display: flex;
+        
+    }
+    1% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateX(0);
+        
+    }
+    99% {
+        transform: translateX(100%);
+    }
+    100% {
+      display: none;
+    }
+}
+
+
 
 // .skills {
 //     width: 100%;
