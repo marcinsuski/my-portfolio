@@ -249,3 +249,23 @@ const navToggle = document.querySelector('.nav__toggle');
 navToggle.addEventListener('click', () => { 
     document.body.classList.toggle('nav-open');
 })
+
+
+
+// skills slider
+
+const sliderContainer = document.querySelector('slider-title');
+const sliderscreen = document.querySelector('slider-title__item');
+const languages = document.getElementById('languages');
+const frameworks = document.getElementById('frameworks');
+const tools = document.getElementById('tools');
+const other = document.getElementById('other');
+
+// sliderContainer.addEventListener('click' () => {
+//     languages.classlist.add('active');
+//     frameworks.classlist.remove('active');
+//     tools.classlist.remove('active');
+//     other.classlist.remove('active');
+
+
+// })
