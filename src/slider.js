@@ -1,43 +1,53 @@
-// skills slider
+//  skills slider
 
-const sliderTitles = document.querySelector('.slider__title');
-const sliderTitle = document.querySelectorAll('.slider__title-item');
-const languages = document.getElementById('languages');
-const frameworks = document.getElementById('frameworks');
-const tools = document.getElementById('tools');
-const other = document.getElementById('other');
-
-const sliderContent = document.querySelectorAll('.slider-content__item')
-const item1 = document.querySelector('.item-1');
-const item2 = document.querySelector('.item-2');
-const item3 = document.querySelector('.item-3');
-const item4 = document.querySelector('.item-4');
-
-function changeTitle(e) {
-
-    const title = e.target.innerText;
-    sliderTitle.forEach(item => {
-        
-        item.classList.remove('active');
-        item.innerText === title && item.classList.add('active')
-        item.innerText === 'Languages' 
-        && item1.classList.add('active')
-  
+const radioBtn = document.querySelectorAll(".radio-btn");
+const Title = document.querySelectorAll(".slider__title-item");
+const languages = document.getElementById("languages");
+const frameworks = document.getElementById("frameworks");
+const tools = document.getElementById("tools");
+const other = document.getElementById("other");
+const radio1 = document.getElementById("radio1");
 
 
+document.getElementById("radio1").checked = true;
+let counter = 2;
 
-      
-      
-    //    item.innerText === 'Frameworks' && item2.classList.add('active')
-        // item.innerText !== 'Tools' && item.classList.remove('active') && item3.classList.add('active')
-        // item.innerText !== 'Other skills' && item.classList.remove('active') && item4.classList.add('active')
-    });
-    };
+setInterval(function () {
+    document.getElementById("radio" + counter).checked = true;
+    changeTitle();
+    counter++;
+    if (counter > 4) {
+        counter = 1;
+    }
+}, 3000);
 
+const changeTitle = () => {
+    Title.forEach((title) => title.classList.remove("active"));
+    if (document.getElementById("radio" + counter).id == "radio1") {
+        languages.classList.add("active");
+    } else if (document.getElementById("radio" + counter).id == "radio2") {
+        frameworks.classList.add("active");
+    } else if (document.getElementById("radio" + counter).id == "radio3") {
+        tools.classList.add("active");
+    } else if (document.getElementById("radio" + counter).id == "radio4") {
+        other.classList.add("active");
+    }
+}
 
+const manualChange = (e) => {
+    const target = e.target.id;
+    if (target === 'radio1') {
+        counter = 1;
+    } else if (target === 'radio2') {
+        counter = 2;
+    } else if (target === 'radio3') {
+        counter = 3;
+    } else counter = 4;
+    changeTitle();
 
-sliderTitle.forEach(title => {
-    title.addEventListener('click', changeTitle);
-}) 
+    
+}
 
-// sliderTitles.addEventListener('click', () => {console.log('clicked')});
+radioBtn.forEach(btn => {
+    btn.addEventListener('click', manualChange) 
+})

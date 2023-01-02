@@ -10,6 +10,7 @@
             href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
             rel="stylesheet"
         />
+        <link rel="icon" type="image/x-icon" href="./src/images/ico.png" />
         <link rel="stylesheet" href="./dist/styles.css" />
         <script src="https://smtpjs.com/v3/smtp.js"></script>
         <title>Marcin Suski</title>
@@ -94,61 +95,123 @@
             </section>
             <section class="skills">
                 <div class="slider__container fade-in">
-                    <div class="slider__title">
-                        <span class="slider__title-item active" id="languages">Languages</span>
-                        <span class="slider__title-item" id="frameworks">Frameworks</span>
-                        <span class="slider__title-item" id="tools">Tools</span>
-                        <span class="slider__title-item" id="other">Other skills</span>
-                    </div>
+                             <!-- slider titles start -->
+                             <div class="slider__title">
+                                <span class="slider__title-item active" id="languages"
+                                    >Languages</span
+                                >
+                                <span class="slider__title-item" id="frameworks"
+                                    >Frameworks</span
+                                >
+                                <span class="slider__title-item" id="tools"
+                                    >Tools</span
+                                >
+                                <span class="slider__title-item" id="other"
+                                    >Other skills</span
+                                >
+                            </div>
+                            <!-- slider titles end -->
                     <div class="card slider-content">
-                    <div class="slider-content-wrapper">
-                        <div class="slider-content__item item-1">
-                            <img
-                            src="./src/images/javascript-horizontal.svg"
-                            alt="javascript"
-                        />
-                        <img src="./src/images/typescript.svg" alt="typescript" />
-                        <img src="./src/images/html5.svg" alt="html" />
-                        <img src="./src/images/css3.svg" alt="css" />
-                        <img src="./src/images/sass.svg" alt="sass" />
-                 
-                        
-                        </div>
-                        <div class="slider-content__item item-2">
-                            <img src="./src/images/react.svg" alt="react" />
-                            <img src="./src/images/material-ui.svg" alt="material-ui" />
-                            
-                        </div>
-                        <div class="slider-content__item item-3">
-                            <img src="./src/images/git.svg" alt="git" />
-                            <img src="./src/images/figma.svg" alt="figma" />
-                            <img
-                            src="./src/images/firebase.svg"
-                            alt="firebase"
-                        />
-                        </div>
-                        <div class="slider-content__item item-4">
-                            <div class="other-skills">
-                                <img src="./src/images/skill-problem.svg" alt="problem-solver">
-                                Problem-solver</div>
-                            <div class="other-skills">
-                                <img src="./src/images/skill-list.svg" alt="detail-oriented">
-                                detail-oriented</div>
-                           <div class="other-skills">
-                            <img src="./src/images/skill-analytical.svg" alt="analytical thinking">
-                            Analytical thinking</div>
-                            <div class="other-skills">
-                                <img src="./src/images/skill-time.svg" alt="planning">
-                               Time management</div>
-                            <div class="other-skills">
-                                <img src="./src/images/skill-team.svg" alt="team-player">
-                                Team player</div>
-                            <div class="other-skills">
-                                <img src="./src/images/skill-project.svg" alt="project management">
-                                Project management</div>
-                        </div>
+                        <div class="slider-content-wrapper">
+                            <!-- radio buttons starts-->
+                            <input type="radio" name="radio-btn" class="radio-btn" id="radio1" />
+                            <input type="radio" name="radio-btn" class="radio-btn"  id="radio2" />
+                            <input type="radio" name="radio-btn" class="radio-btn" id="radio3" />
+                            <input type="radio" name="radio-btn" class="radio-btn"  id="radio4" />
+                            <!-- radio buttons ends-->
+                            <!-- slides start -->
+                            <div class="slider-content__item item-1">
+                                <img
+                                    src="./src/images/javascript-horizontal.svg"
+                                    alt="javascript"
+                                />
+                                <img
+                                    src="./src/images/typescript.svg"
+                                    alt="typescript"
+                                />
+                                <img src="./src/images/html5.svg" alt="html" />
+                                <img src="./src/images/css3.svg" alt="css" />
+                                <img src="./src/images/sass.svg" alt="sass" />
+                            </div>
+                            <div class="slider-content__item item-2">
+                                <img src="./src/images/react.svg" alt="react" />
+                                <img
+                                    src="./src/images/material-ui.svg"
+                                    alt="material-ui"
+                                />
+                            </div>
+                            <div class="slider-content__item item-3">
+                                <img src="./src/images/git.svg" alt="git" />
+                                <img src="./src/images/figma.svg" alt="figma" />
+                                <img
+                                    src="./src/images/firebase.svg"
+                                    alt="firebase"
+                                />
+                            </div>
+                            <div class="slider-content__item item-4">
+                                <div class="other-skills">
+                                    <img
+                                        src="./src/images/skill-problem.svg"
+                                        alt="problem-solver"
+                                    />
+                                    Problem-solver
+                                </div>
+                                <div class="other-skills">
+                                    <img
+                                        src="./src/images/skill-list.svg"
+                                        alt="detail-oriented"
+                                    />
+                                    detail-oriented
+                                </div>
+                                <div class="other-skills">
+                                    <img
+                                        src="./src/images/skill-analytical.svg"
+                                        alt="analytical thinking"
+                                    />
+                                    Analytical thinking
+                                </div>
+                                <div class="other-skills">
+                                    <img
+                                        src="./src/images/skill-time.svg"
+                                        alt="planning"
+                                    />
+                                    Time management
+                                </div>
+                                <div class="other-skills">
+                                    <img
+                                        src="./src/images/skill-team.svg"
+                                        alt="team-player"
+                                    />
+                                    Team player
+                                </div>
+                                <div class="other-skills">
+                                    <img
+                                        src="./src/images/skill-project.svg"
+                                        alt="project management"
+                                    />
+                                    Project management
+                                </div>
+                                <!-- slides end -->
 
-                    </div>
+                                <!-- auto navigation end -->
+                            </div>
+                            <!-- auto navigation start -->
+                            <div class="navigation-auto">
+                                <div class="auto-btn auto-btn1"></div>
+                                <div class="auto-btn auto-btn2"></div>
+                                <div class="auto-btn auto-btn3"></div>
+                                <div class="auto-btn auto-btn4"></div>
+                            </div>
+
+                            <!-- manual navigation start -->
+                            <div class="navigation-manual">
+                                <label for="radio1" class="manual-btn"></label>
+                                <label for="radio2" class="manual-btn"></label>
+                                <label for="radio3" class="manual-btn"></label>
+                                <label for="radio4" class="manual-btn"></label>
+                            </div>
+                            <!-- manual navigation end -->
+                        </div>
                     </div>
                 </div>
 
@@ -192,7 +255,7 @@
                     </div>
                 </div>
                 <div class="skills__container fade-in"> -->
-                    <!-- <div class="skills__title">
+                <!-- <div class="skills__title">
                         <h3>My Tools:</h3>
                     </div>
                     <div class="card skills__content">
