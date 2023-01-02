@@ -10,16 +10,7 @@ const radio1 = document.getElementById("radio1");
 
 
 document.getElementById("radio1").checked = true;
-let counter = 2;
-
-setInterval(function () {
-    document.getElementById("radio" + counter).checked = true;
-    changeTitle();
-    counter++;
-    if (counter > 4) {
-        counter = 1;
-    }
-}, 3000);
+let counter = 1;
 
 const changeTitle = () => {
     Title.forEach((title) => title.classList.remove("active"));
@@ -33,8 +24,21 @@ const changeTitle = () => {
         other.classList.add("active");
     }
 }
+    
+  const sliderInteralFunction = () => {
+    document.getElementById("radio" + counter).checked = true;
+    changeTitle();
+    counter++;
+    if (counter > 4) {
+        counter = 1;
+    }
+};
+    setInterval(sliderInteralFunction, 3000);
+    sliderInteralFunction()
 
-const manualChange = (e) => {
+
+
+const radioManualControl = (e) => {
     const target = e.target.id;
     if (target === 'radio1') {
         counter = 1;
@@ -48,6 +52,19 @@ const manualChange = (e) => {
     
 }
 
-radioBtn.forEach(btn => {
-    btn.addEventListener('click', manualChange) 
-})
+radioBtn.forEach(btn => btn.addEventListener('click', radioManualControl));
+
+const titleManualControl = (e) => {
+    const target = e.target.id;
+    if (target === 'languages') {
+        counter = 1;
+    } else if (target === 'frameworks') {
+        counter = 2;
+    } else if (target === 'tools') {
+        counter = 3;
+    } else counter = 4;
+    changeTitle();
+    sliderInteralFunction()
+}
+
+Title.forEach(title => title.addEventListener('click', titleManualControl));
