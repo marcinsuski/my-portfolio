@@ -1,6 +1,5 @@
 @use "config" as *;
 
-
 body {
     height: 100%;
     font-family: "Josefin Sans", sans-serif;
@@ -180,7 +179,7 @@ header {
                 border: 2px solid;
                 border-radius: 50px;
                 background-color: $button-bg;
-  
+
                 color: $button;
                 transition: ease 0.3s;
                 font-weight: 500;
@@ -297,8 +296,9 @@ section.main {
 }
 
 section.about {
-    min-height: 70vh;
+    min-height: 50vh;
     height: max-content;
+    margin-bottom: 2rem;
     color: $text-primary;
     display: flex;
     align-items: center;
@@ -307,6 +307,7 @@ section.about {
     .about-me {
         width: 90%;
         display: flex;
+
         flex-direction: column;
         justify-content: space-between;
         width: clamp(18rem, 10vw + 15rem, 40rem);
@@ -339,7 +340,7 @@ section.about {
 
 section.skills {
     height: max-content;
-    margin: 4rem 0;
+    margin-bottom: 4rem;
     color: $text-primary;
     display: flex;
     justify-content: center;
@@ -354,7 +355,6 @@ section.skills {
     gap: 0.5rem;
 
     .slider__title {
-       
         height: 2.5rem;
         display: flex;
         align-items: flex-end;
@@ -381,9 +381,6 @@ section.skills {
         overflow-x: hidden;
         overflow-y: hidden;
 
-
-        
-
         &-wrapper {
             width: 500%;
             height: 100%;
@@ -407,18 +404,24 @@ section.skills {
 
             img {
                 height: 60px;
-
             }
 
             .other-skills {
-
-                width: 180px;
+                width: 150px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 align-content: center;
                 gap: 0.3rem;
+
+                img {
+                    height: 50px;
+                }
+
+                span {
+                    text-align: center;
+                }
             }
         }
 
@@ -435,7 +438,7 @@ section.skills {
 
         .manual-btn {
             border: 1px solid $text-link;
-            padding: 5px;
+            padding: 5px 10px;
             width: 20px;
             margin: 0 8px;
             border-radius: 10px;
@@ -481,7 +484,7 @@ section.skills {
 
             .auto-btn {
                 border: 1px solid $text-link;
-                padding: 5px;
+                padding: 5px 10px;
                 width: 20px;
                 height: 10px;
                 z-index: 5;
@@ -504,11 +507,8 @@ section.skills {
         #radio4:checked ~ .navigation-auto .auto-btn4 {
             background-color: $text-link;
         }
-
     }
 }
-
-
 
 section.main-projects {
     width: 100%;
@@ -1145,9 +1145,21 @@ footer {
         }
     }
 
-    section.main-projects {
-        margin-top: 3rem;
-        min-height: 90vh;
+    .slider__container {
+
+
+
+        .slider-content {
+        
+            .navigation-manual {
+                transform: translateX(-30%);
+            }
+
+            // automatic navigation
+            .navigation-auto {
+                transform: translateX(-30%);
+            }
+        }
     }
 
     .content__title-icon svg {
@@ -1168,9 +1180,6 @@ footer {
             .project__content {
                 width: 60%;
                 padding: 2rem 1.5rem 1.5rem 1.5rem;
-
-                .content__title {
-                }
 
                 .content__main-text {
                     font-size: 0.7rem;
@@ -1287,7 +1296,7 @@ footer {
         }
     }
 
-    //mobile navigation menu
+    //mobile navigation menu start //
 
     .hamburger {
         display: block;
@@ -1346,12 +1355,19 @@ footer {
         transform: rotate(90deg) translate(-8px);
     }
 
+    //mobile navigation menu end //
+
     section.main {
         gap: 2rem;
 
         .main-wrapper {
             margin-left: 3%;
         }
+    }
+
+    section.about {
+        margin-top: 1rem;
+        margin-bottom: 6rem;
     }
 
     .title {
@@ -1369,6 +1385,173 @@ footer {
             }
         }
     }
+
+    // skills section and slider start //
+
+    section.skills {
+        align-items: center;
+        min-height: 60vh;
+    }
+
+    .slider__container {
+        .slider__title {
+            height: max-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+
+            &-item {
+                display: flex;
+                justify-content: center;
+                width: 100px;
+                font-size: 0.9rem;
+            }
+            .active {
+                font-size: 1.1rem;
+            }
+        }
+
+        .slider-content {
+            position: relative;
+            width: 100%;
+            // min-height: 300px;
+            height: 400px;
+            overflow-x: hidden;
+            // display: flex;
+            justify-content: center;
+            align-items: center;
+            // overflow-y: hidden;
+
+            &-wrapper {
+                align-items: center;
+                height: 100%;
+
+                & input {
+                    display: none;
+                }
+            }
+
+            &__item {
+                width: 20%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                gap: 1rem;
+                flex-wrap: wrap;
+                transition: 2s;
+
+                img {
+                    // height: 50px;
+                    width: 120px;
+                }
+
+                .other-skills {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    align-content: center;
+                    gap: 0.3rem;
+                    width: 125px;
+                    font-size: 0.8rem;
+
+                    & img {
+                        height: 40px;
+                    }
+                    span {
+                        text-align: center;
+                    }
+                }
+            }
+
+            .navigation-manual {
+                position: absolute;
+                width: 30%;
+                bottom: 0.5rem;
+                right: 0;
+                transform: translateX(-50%);
+                margin-bottom: 10px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .manual-btn {
+                border: 1px solid $text-link;
+                padding: 5px 10px;
+                width: 20px;
+                margin: 0 8px;
+                border-radius: 10px;
+                transition: 1s;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $text-link;
+                }
+            }
+
+            #radio1:checked ~ .item-1 {
+                margin-left: 0;
+            }
+
+            #radio2:checked ~ .item-1 {
+                margin-left: -20%;
+            }
+
+            #radio3:checked ~ .item-1 {
+                margin-left: -40%;
+            }
+
+            #radio4:checked ~ .item-1 {
+                margin-left: -60%;
+            }
+
+            .item-4 {
+                padding: 1rem;
+            }
+
+            // automatic navigation
+
+            .navigation-auto {
+                position: absolute;
+                width: 30%;
+                bottom: 0.5rem;
+                right: 0;
+                transform: translateX(-50%);
+                margin-bottom: 10px;
+                display: flex;
+                justify-content: center;
+
+                .auto-btn {
+                    border: 1px solid $text-link;
+                    padding: 5px 10px;
+                    width: 20px;
+                    margin: 0 8px;
+                    border-radius: 10px;
+                    transition: 1s;
+                    cursor: pointer;
+                }
+            }
+
+            #radio1:checked ~ .navigation-auto .auto-btn1 {
+                background-color: $text-link;
+            }
+            #radio2:checked ~ .navigation-auto .auto-btn2 {
+                background-color: $text-link;
+            }
+            #radio3:checked ~ .navigation-auto .auto-btn3 {
+                background-color: $text-link;
+            }
+            #radio4:checked ~ .navigation-auto .auto-btn4 {
+                background-color: $text-link;
+            }
+        }
+    }
+
+    // skills section and slider end //
 
     .arrow-wrapper {
         height: 30%;
