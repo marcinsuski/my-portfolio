@@ -26,14 +26,16 @@ const changeTitle = () => {
 }
     
   const sliderInteralFunction = () => {
+
     document.getElementById("radio" + counter).checked = true;
     changeTitle();
     counter++;
     if (counter > 4) {
         counter = 1;
     }
+
 };
-    setInterval(sliderInteralFunction, 3000);
+   let myTimer = setInterval(sliderInteralFunction, 5000);
     sliderInteralFunction()
 
 
@@ -64,7 +66,11 @@ const titleManualControl = (e) => {
         counter = 3;
     } else counter = 4;
     changeTitle();
+    clearInterval(myTimer)
+    myTimer = setInterval(sliderInteralFunction, 5000);
+
     sliderInteralFunction()
+
 }
 
 Title.forEach(title => title.addEventListener('click', titleManualControl));
