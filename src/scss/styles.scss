@@ -319,9 +319,11 @@ section.about {
         flex-direction: column;
         justify-content: space-between;
         width: clamp(18rem, 10vw + 15rem, 40rem);
-        height: clamp(18rem, 10vw + 15rem, 40rem);
+        min-height: clamp(18rem, 10vw + 15rem, 40rem);
+        height: fit-content;
 
         &__content {
+            text-align: justify;
             padding: 1rem;
 
             p {

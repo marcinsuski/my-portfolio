@@ -326,9 +326,11 @@ section.about .about-me {
   flex-direction: column;
   justify-content: space-between;
   width: clamp(18rem, 10vw + 15rem, 40rem);
-  height: clamp(18rem, 10vw + 15rem, 40rem);
+  min-height: clamp(18rem, 10vw + 15rem, 40rem);
+  height: fit-content;
 }
 section.about .about-me__content {
+  text-align: justify;
   padding: 1rem;
 }
 section.about .about-me__content p {
