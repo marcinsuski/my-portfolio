@@ -149,22 +149,26 @@ header {
   font-weight: 400;
 }
 header .navbar {
-  width: 100%;
+  width: 90%;
   display: flex;
   align-items: space-between;
 }
 header .logo {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 20%;
+  justify-content: flex-end;
+  width: 10%;
+  margin-left: 2rem;
   color: hsl(193deg, 100%, 78%);
+}
+header .logo img {
+  width: 50px;
 }
 header .menu {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 80%;
+  width: 100%;
 }
 header .menu ul {
   height: 100%;
@@ -227,6 +231,7 @@ header .menu li .resume:hover, header .menu li .resume.active {
 
 section.main {
   height: 95vh;
+  width: 100%;
   color: hsl(0deg, 0%, 100%);
   display: flex;
   flex-direction: column;
@@ -645,10 +650,10 @@ section.main-projects {
   left: 1.5rem;
   top: 0;
   content: "";
+  transform: translateY(-50%);
   position: absolute;
 }
 .main-projects .project__container::before {
-  transform: translateY(-50%);
   background-color: hsla(0deg, 0%, 0%, 0.6);
   border-radius: 50%;
   border: none;
@@ -658,7 +663,6 @@ section.main-projects {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 60%;
-  transform: translateY(-50%);
 }
 
 section.other-projects {
