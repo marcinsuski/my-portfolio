@@ -595,12 +595,14 @@ section.main-projects {
             }
 
             .content__main-text {
+                text-align: justify;
                 font-size: 0.8rem;
                 margin-bottom: 0.8rem;
             }
 
             .content__tags {
                 display: flex;
+                flex-wrap: wrap;
                 gap: 0.6rem;
 
                 .tag {
@@ -613,6 +615,7 @@ section.main-projects {
         }
 
         .project__preview {
+            position: relative;
             border: 2px solid $preview-border;
             background-color: $preview-bg;
             width: 50%;
@@ -621,7 +624,76 @@ section.main-projects {
             justify-content: center;
             align-items: center;
             gap: 2rem;
+
+            &-container {   
+                width: 100%;
+                height: 100%; 
+                 display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+
+                &-buttons {
+                    display: none;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    gap: 1rem;
+                    top: 50%;
+                     left: 50%;
+                     transform: translateX(-50%) translateY(-50%);
+                     transition: all 300ms ease-in;
+                     
+                }
+
+
+                &:hover {           
+                  
+
+                    img {
+                        filter:hue-rotate(20);
+                        opacity: 0;
+
+                        transition: all 300ms ease-in;
+                    }
+
+                       .project__preview-container-buttons {
+                        display: flex;
+                        animation: FadeIn ease-in-out 3s infinite;
+                       } 
+
+                }
+
+                
+                & img {
+                    width:100%;
+                    height:100%;
+                    object-fit:cover;
+            }
+
+                   
         }
+
+        }
+
+     
+
+
+@keyframes FadeIn {
+    0% {
+        display: flex;
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+        
 
         &::before,
         &::after {
@@ -701,12 +773,14 @@ section.other-projects {
                     }
                 }
                 &-text {
+                 
                     width: 100%;
                     padding: 0.5rem 0;
                 }
             }
 
             .content__main-text {
+                text-align: justify;
                 font-size: 0.8rem;
                 margin-bottom: 1rem;
             }
@@ -1146,11 +1220,7 @@ footer {
     }
 
     .slider__container {
-
-
-
         .slider-content {
-        
             .navigation-manual {
                 transform: translateX(-30%);
             }
@@ -1626,7 +1696,7 @@ footer {
 
         .project__container {
             width: 60vw;
-            height: 60vw;
+            height: max-content;
 
             .project__content {
                 .content__main-text {

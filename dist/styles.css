@@ -566,11 +566,13 @@ section.main-projects {
   fill: hsl(164deg, 95%, 43%);
 }
 .main-projects .project__container .project__content .content__main-text {
+  text-align: justify;
   font-size: 0.8rem;
   margin-bottom: 0.8rem;
 }
 .main-projects .project__container .project__content .content__tags {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.6rem;
 }
 .main-projects .project__container .project__content .content__tags .tag {
@@ -580,6 +582,7 @@ section.main-projects {
   font-size: 0.6rem;
 }
 .main-projects .project__container .project__preview {
+  position: relative;
   border: 2px solid hsl(193deg, 100%, 78%);
   background-color: hsla(193deg, 29%, 14%, 0.6);
   width: 50%;
@@ -588,6 +591,53 @@ section.main-projects {
   justify-content: center;
   align-items: center;
   gap: 2rem;
+}
+.main-projects .project__container .project__preview-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.main-projects .project__container .project__preview-container-buttons {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  gap: 1rem;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  transition: all 300ms ease-in;
+}
+.main-projects .project__container .project__preview-container:hover img {
+  filter: hue-rotate(20);
+  opacity: 0;
+  transition: all 300ms ease-in;
+}
+.main-projects .project__container .project__preview-container:hover .project__preview-container-buttons {
+  display: flex;
+  animation: FadeIn ease-in-out 3s infinite;
+}
+.main-projects .project__container .project__preview-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@keyframes FadeIn {
+  0% {
+    display: flex;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .main-projects .project__container::before, .main-projects .project__container::after {
   height: 50px;
@@ -665,6 +715,7 @@ section.other-projects {
   padding: 0.5rem 0;
 }
 .other-projects .project__container .project__content .content__main-text {
+  text-align: justify;
   font-size: 0.8rem;
   margin-bottom: 1rem;
 }
@@ -1401,7 +1452,7 @@ html {
   }
   .other-projects .project__container {
     width: 60vw;
-    height: 60vw;
+    height: max-content;
   }
   .other-projects .project__container .project__content .content__main-text {
     font-size: 0.7rem;
