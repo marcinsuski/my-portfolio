@@ -81,7 +81,7 @@ const closeBtn = document.querySelector('.close');
     Email.send({
         SecureToken : "a9e0425a-3403-484a-a28c-50ac72e160db",
         To : 'suski.marcin@gmail.com',
-        From : email.value,
+        From : 'suski.marcin@gmail.com',
         Subject : "Contact from " + email.value,
          Body : body
     }).then(
