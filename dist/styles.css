@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 3.5rem;
-  background: -webkit-linear-gradient(20deg, #eee, #8fe7ff, #eee);
+  background: -webkit-linear-gradient(20deg, #fffdfd, #8fe7ff, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1208,7 +1208,7 @@ footer .mail a:hover {
 }
 @media only screen and (max-width: 600px) {
   body,
-html {
+  html {
     overflow-x: hidden;
   }
   .wrapper {
@@ -1273,7 +1273,7 @@ html {
     font-size: 1rem;
   }
   .language a a:hover,
-.language a a:focus {
+  .language a a:focus {
     color: hsl(164deg, 95%, 43%);
     transform: translateY(-3px);
   }
@@ -1282,8 +1282,8 @@ html {
     position: relative;
   }
   .hamburger,
-.hamburger::before,
-.hamburger::after {
+  .hamburger::before,
+  .hamburger::after {
     width: 2rem;
     height: 3px;
     background-color: hsl(164deg, 95%, 43%);
@@ -1291,7 +1291,7 @@ html {
     transition: transform 400ms ease-in-out, opacity 200ms linear;
   }
   .hamburger::before,
-.hamburger::after {
+  .hamburger::after {
     content: "";
     position: absolute;
     left: 0;
