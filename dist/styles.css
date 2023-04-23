@@ -7,16 +7,16 @@
 a,
 .link {
   text-decoration: none;
-  color: hsl(164deg, 95%, 43%);
+  color: hsl(164, 95%, 43%);
 }
 
 html {
-  background-color: hsl(222deg, 62%, 15%);
+  background-color: hsl(222, 62%, 15%);
   scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: hsl(0deg, 0%, 100%);
+  color: hsl(0, 0%, 100%);
 }
 
 h1 {
@@ -44,14 +44,14 @@ body {
   height: 100%;
   font-family: "Josefin Sans", sans-serif;
   font-size: 100%;
-  background-color: hsl(222deg, 62%, 15%);
-  background: url("../src/images/background-hexagon.svg");
+  background-color: hsl(222, 62%, 15%);
+  background: url("../src/images/background-hexagon.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   backdrop-filter: brightness(60%);
-  color: hsl(193deg, 100%, 78%);
+  color: hsl(193, 100%, 78%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,7 +69,7 @@ button {
   border: 2px solid;
   border-radius: 50px;
   background-color: transparent;
-  color: hsl(164deg, 95%, 43%);
+  color: hsl(164, 95%, 43%);
   transition: ease 0.3s;
   font-weight: 500;
   letter-spacing: 0.15rem;
@@ -82,13 +82,13 @@ button::after {
   width: 100%;
   height: 100%;
   border-radius: 50px;
-  background-color: hsla(0deg, 0%, 0%, 0.4);
+  background-color: hsla(0, 0%, 0%, 0.4);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: -1;
 }
 button:hover, button.active {
-  background-color: hsla(164deg, 95%, 43%, 0.15);
+  background-color: hsla(164, 95%, 43%, 0.15);
   backdrop-filter: blur(4px);
   font-weight: 500;
 }
@@ -145,7 +145,7 @@ header {
   letter-spacing: 0.1rem;
   align-items: center;
   justify-content: center;
-  color: hsl(0deg, 0%, 100%);
+  color: hsl(0, 0%, 100%);
   font-weight: 400;
 }
 header .navbar {
@@ -159,7 +159,7 @@ header .logo {
   justify-content: flex-end;
   width: 10%;
   margin-left: 2rem;
-  color: hsl(193deg, 100%, 78%);
+  color: hsl(193, 100%, 78%);
 }
 header .logo img {
   width: 50px;
@@ -194,11 +194,11 @@ header .menu li a {
   width: 100%;
   height: 100%;
   text-decoration: none;
-  color: hsl(193deg, 100%, 78%);
+  color: hsl(193, 100%, 78%);
   transition: all 0.3s ease-in;
 }
 header .menu li a:hover {
-  color: hsl(164deg, 95%, 43%);
+  color: hsl(164, 95%, 43%);
   transform: translateY(-3px);
 }
 header .menu .resume {
@@ -208,7 +208,7 @@ header .menu .resume {
   border: 2px solid;
   border-radius: 50px;
   background-color: transparent;
-  color: hsl(164deg, 95%, 43%);
+  color: hsl(164, 95%, 43%);
   transition: ease 0.3s;
   font-weight: 500;
   letter-spacing: 0.15rem;
@@ -221,13 +221,13 @@ header .menu .resume::after {
   width: 100%;
   height: 100%;
   border-radius: 50px;
-  background-color: hsla(0deg, 0%, 0%, 0.4);
+  background-color: hsla(0, 0%, 0%, 0.4);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: -1;
 }
 header .menu .resume:hover, header .menu .resume.active {
-  background-color: hsla(164deg, 95%, 43%, 0.15);
+  background-color: hsla(164, 95%, 43%, 0.15);
   backdrop-filter: blur(4px);
   font-weight: 500;
 }
@@ -236,25 +236,25 @@ header .menu .resume:hover, header .menu .resume.active {
   margin-left: 1rem;
   height: 100%;
   min-width: 60px;
-  border-left: 1px solid hsl(193deg, 100%, 78%);
+  border-left: 1px solid hsl(193, 100%, 78%);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .language a {
   text-decoration: none;
-  color: hsl(193deg, 100%, 78%);
+  color: hsl(193, 100%, 78%);
   transition: all 0.3s ease-in;
 }
 .language a:hover {
-  color: hsl(164deg, 95%, 43%);
+  color: hsl(164, 95%, 43%);
   transform: translateY(-3px);
 }
 
 section.main {
   height: 95vh;
   width: 100%;
-  color: hsl(0deg, 0%, 100%);
+  color: hsl(0, 0%, 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -274,7 +274,7 @@ section.main .main-wrapper {
   justify-content: center;
   align-items: flex-start;
   text-align: center;
-  color: hsl(0deg, 0%, 100%);
+  color: hsl(0, 0%, 100%);
 }
 .title .welcome {
   width: 50vh;
@@ -292,7 +292,7 @@ section.main .main-wrapper {
 }
 .title .welcome p {
   font-size: clamp(0.5rem, 2vw + 0.2rem, 1.25rem);
-  color: hsl(193deg, 100%, 78%);
+  color: hsl(193, 100%, 78%);
   text-align: start;
   margin-bottom: 1.5rem;
 }
@@ -325,10 +325,10 @@ section.main .main-wrapper {
   }
 }
 .card {
-  background: hsla(0deg, 0%, 0%, 0.6);
+  background: hsla(0, 0%, 0%, 0.6);
   border: none;
   border-radius: 5px;
-  background-color: hsla(0deg, 0%, 0%, 0.6);
+  background-color: hsla(0, 0%, 0%, 0.6);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -337,7 +337,7 @@ section.about {
   min-height: 50vh;
   height: max-content;
   margin-bottom: 2rem;
-  color: hsl(193deg, 100%, 78%);
+  color: hsl(193, 100%, 78%);
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -375,7 +375,7 @@ section.about .hero img {
 section.skills {
   height: max-content;
   margin-bottom: 4rem;
-  color: hsl(193deg, 100%, 78%);
+  color: hsl(193, 100%, 78%);
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -403,7 +403,7 @@ section.skills {
 .slider__container .slider__title .active {
   font-size: 1.5rem;
   font-weight: 500;
-  color: hsl(0deg, 0%, 100%);
+  color: hsl(0, 0%, 100%);
   transform: scale(1.1) translateY(-3px);
 }
 .slider__container .slider-content {
@@ -461,7 +461,7 @@ section.skills {
   justify-content: center;
 }
 .slider__container .slider-content .manual-btn {
-  border: 1px solid hsl(164deg, 95%, 43%);
+  border: 1px solid hsl(164, 95%, 43%);
   padding: 5px 10px;
   width: 20px;
   margin: 0 8px;
@@ -470,7 +470,7 @@ section.skills {
   cursor: pointer;
 }
 .slider__container .slider-content .manual-btn:hover {
-  background-color: hsl(164deg, 95%, 43%);
+  background-color: hsl(164, 95%, 43%);
 }
 .slider__container .slider-content #radio1:checked ~ .item-1 {
   margin-left: 0;
@@ -498,7 +498,7 @@ section.skills {
   justify-content: center;
 }
 .slider__container .slider-content .navigation-auto .auto-btn {
-  border: 1px solid hsl(164deg, 95%, 43%);
+  border: 1px solid hsl(164, 95%, 43%);
   padding: 5px 10px;
   width: 20px;
   height: 10px;
@@ -509,21 +509,21 @@ section.skills {
   cursor: pointer;
 }
 .slider__container .slider-content #radio1:checked ~ .navigation-auto .auto-btn1 {
-  background-color: hsl(164deg, 95%, 43%);
+  background-color: hsl(164, 95%, 43%);
 }
 .slider__container .slider-content #radio2:checked ~ .navigation-auto .auto-btn2 {
-  background-color: hsl(164deg, 95%, 43%);
+  background-color: hsl(164, 95%, 43%);
 }
 .slider__container .slider-content #radio3:checked ~ .navigation-auto .auto-btn3 {
-  background-color: hsl(164deg, 95%, 43%);
+  background-color: hsl(164, 95%, 43%);
 }
 .slider__container .slider-content #radio4:checked ~ .navigation-auto .auto-btn4 {
-  background-color: hsl(164deg, 95%, 43%);
+  background-color: hsl(164, 95%, 43%);
 }
 
 section.main-projects {
   width: 100%;
-  color: hsl(193deg, 100%, 78%);
+  color: hsl(193, 100%, 78%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -535,10 +535,10 @@ section.main-projects {
   width: 22px;
   height: 22px;
   transition: all 0.3s ease-in;
-  fill: hsl(193deg, 100%, 78%);
+  fill: hsl(193, 100%, 78%);
 }
 .content__title-icon svg:hover, .content__title-icon svg:active {
-  fill: hsl(164deg, 95%, 43%);
+  fill: hsl(164, 95%, 43%);
   transform: translateY(-3px);
 }
 
@@ -546,10 +546,10 @@ section.main-projects {
   width: 22px;
   height: 22px;
   transition: all 0.3s ease-in;
-  fill: hsl(193deg, 100%, 78%);
+  fill: hsl(193, 100%, 78%);
 }
 .socials svg:hover, .socials svg:active {
-  fill: hsl(164deg, 95%, 43%);
+  fill: hsl(164, 95%, 43%);
 }
 
 .main-projects .title {
@@ -589,10 +589,10 @@ section.main-projects {
   transition: ease 0.3s;
 }
 .main-projects .project__container .project__content .content__title-icons-icon svg {
-  fill: hsl(193deg, 100%, 78%);
+  fill: hsl(193, 100%, 78%);
 }
 .main-projects .project__container .project__content .content__title-icons-icon svg:hover {
-  fill: hsl(164deg, 95%, 43%);
+  fill: hsl(164, 95%, 43%);
 }
 .main-projects .project__container .project__content .content__main-text {
   text-align: justify;
@@ -606,14 +606,14 @@ section.main-projects {
 }
 .main-projects .project__container .project__content .content__tags .tag {
   padding: 0.2rem 1rem;
-  border: 1px solid hsl(193deg, 100%, 78%);
+  border: 1px solid hsl(193, 100%, 78%);
   border-radius: 5px;
   font-size: 0.6rem;
 }
 .main-projects .project__container .project__preview {
   position: relative;
-  border: 2px solid hsl(193deg, 100%, 78%);
-  background-color: hsla(193deg, 29%, 14%, 0.6);
+  border: 2px solid hsl(193, 100%, 78%);
+  background-color: hsla(193, 29%, 14%, 0.6);
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -678,7 +678,7 @@ section.main-projects {
   position: absolute;
 }
 .main-projects .project__container::before {
-  background-color: hsla(0deg, 0%, 0%, 0.6);
+  background-color: hsla(0, 0%, 0%, 0.6);
   border-radius: 50%;
   border: none;
 }
@@ -691,7 +691,7 @@ section.main-projects {
 
 section.other-projects {
   width: 100%;
-  color: hsl(193deg, 100%, 78%);
+  color: hsl(193, 100%, 78%);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -754,7 +754,7 @@ section.other-projects {
 }
 .other-projects .project__container .project__content .content__tags .tag {
   padding: 0.2rem;
-  border: 1px solid hsl(193deg, 100%, 78%);
+  border: 1px solid hsl(193, 100%, 78%);
   border-radius: 5px;
   font-size: 0.6rem;
 }
@@ -768,7 +768,7 @@ section.other-projects {
 }
 .other-projects .project__container::before {
   transform: translateY(-50%);
-  background-color: hsla(0deg, 0%, 0%, 0.6);
+  background-color: hsla(0, 0%, 0%, 0.6);
   backdrop-filter: blur(8px);
   border-radius: 50%;
   border: none;
@@ -782,7 +782,7 @@ section.other-projects {
 }
 
 section.contact {
-  color: hsl(193deg, 100%, 78%);
+  color: hsl(193, 100%, 78%);
 }
 
 .contact {
@@ -839,7 +839,7 @@ section.contact {
   right: 0;
   height: 100%;
   width: 1000%;
-  background: hsla(0deg, 0%, 0%, 0.6);
+  background: hsla(0, 0%, 0%, 0.6);
   border: none;
   border-radius: 5px;
   backdrop-filter: blur(8px);
@@ -890,17 +890,17 @@ section.contact {
   font-size: 0.9rem;
   padding: 0;
   left: 0;
-  color: hsl(164deg, 95%, 43%);
+  color: hsl(164, 95%, 43%);
 }
 .contact__form .form-group input:focus, .contact__form .form-group textarea:focus {
-  border: 2px solid hsl(164deg, 95%, 43%);
+  border: 2px solid hsl(164, 95%, 43%);
 }
 .contact__form .form-group input:not(:focus) + label, .contact__form .form-group input:not(:valid) + label, .contact__form .form-group textarea:not(:focus) + label, .contact__form .form-group textarea:not(:valid) + label {
   top: 0;
   left: 0;
   padding: 0.5rem;
   font-size: 0.7rem;
-  color: hsl(0deg, 0%, 100%);
+  color: hsl(0, 0%, 100%);
 }
 .contact__form input,
 .contact__form textarea {
@@ -909,9 +909,9 @@ section.contact {
   border-radius: 5px;
   width: 100%;
   backdrop-filter: blur(4px);
-  color: hsl(193deg, 100%, 78%);
-  border: 1px solid hsl(193deg, 100%, 78%);
-  background-color: hsla(0deg, 0%, 0%, 0.6);
+  color: hsl(193, 100%, 78%);
+  border: 1px solid hsl(193, 100%, 78%);
+  background-color: hsla(0, 0%, 0%, 0.6);
 }
 .contact__form input::after {
   content: "";
@@ -928,16 +928,16 @@ section.contact {
 }
 .contact__form .form-group.success input,
 .contact__form .form-group.success textarea {
-  border-color: hsl(164deg, 95%, 43%);
+  border-color: hsl(164, 95%, 43%);
 }
 .contact__form .form-group.error input, .contact__form .form-group.error textarea {
-  border-color: hsl(0deg, 100%, 63%);
+  border-color: hsl(0, 100%, 63%);
 }
 .contact__form .form-group.error.error {
   font-weight: 500;
   display: flex;
   justify-content: flex-end;
-  color: hsl(0deg, 100%, 63%);
+  color: hsl(0, 100%, 63%);
   font-size: 0.6rem;
 }
 .contact__form .form-group.error + input::after {
@@ -947,9 +947,9 @@ section.contact {
   height: 8rem;
   border-radius: 5px;
   width: 100%;
-  color: hsl(193deg, 100%, 78%);
-  border: 1px solid hsl(193deg, 100%, 78%);
-  background-color: hsla(0deg, 0%, 0%, 0.6);
+  color: hsl(193, 100%, 78%);
+  border: 1px solid hsl(193, 100%, 78%);
+  background-color: hsla(0, 0%, 0%, 0.6);
 }
 .contact__form input:focus,
 .contact__form textarea:focus {
@@ -961,15 +961,15 @@ section.contact {
   font-size: 1rem;
   border: 2px solid;
   border-radius: 50px;
-  background-color: hsla(0deg, 0%, 5%, 0.2);
+  background-color: hsla(0, 0%, 5%, 0.2);
   backdrop-filter: blur(4px);
-  color: hsl(164deg, 95%, 43%);
+  color: hsl(164, 95%, 43%);
   transition: ease 0.3s;
   font-weight: 500;
   letter-spacing: 0.15rem;
 }
 .contact__form .contact-btn:hover, .contact__form .contact-btn.active {
-  background-color: hsla(164deg, 95%, 43%, 0.15);
+  background-color: hsla(164, 95%, 43%, 0.15);
   backdrop-filter: blur(4px);
   font-weight: 500;
 }
@@ -980,7 +980,7 @@ section.contact {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: hsla(0deg, 0%, 0%, 0.6);
+  background-color: hsla(0, 0%, 0%, 0.6);
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -991,9 +991,9 @@ section.contact {
 .submit-after .prompt-message {
   width: min(70%, 350px);
   height: min(30vh, 150px);
-  border: 1px solid hsl(164deg, 95%, 43%);
+  border: 1px solid hsl(164, 95%, 43%);
   border-radius: 5px;
-  background-color: hsla(0deg, 0%, 0%, 0.6);
+  background-color: hsla(0, 0%, 0%, 0.6);
   backdrop-filter: blur(8px);
   display: flex;
   flex-direction: column;
@@ -1036,25 +1036,25 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 2px solid hsl(193deg, 100%, 78%);
-  color: hsl(193deg, 100%, 78%);
+  border-top: 2px solid hsl(193, 100%, 78%);
+  color: hsl(193, 100%, 78%);
 }
 footer .socials svg {
   width: 22px;
   height: 22px;
   transition: all 0.3s ease-in;
-  fill: hsl(193deg, 100%, 78%);
+  fill: hsl(193, 100%, 78%);
 }
 footer .socials svg:hover, footer .socials svg:active {
-  fill: hsl(164deg, 95%, 43%);
+  fill: hsl(164, 95%, 43%);
   transform: translateY(-3px);
 }
 footer .mail a {
-  color: hsl(193deg, 100%, 78%);
+  color: hsl(193, 100%, 78%);
   transition: all 0.3s ease-in;
 }
 footer .mail a:hover {
-  color: hsl(164deg, 95%, 43%);
+  color: hsl(164, 95%, 43%);
 }
 
 .hidden {
@@ -1091,7 +1091,7 @@ footer .mail a:hover {
     justify-content: center;
     align-items: flex-start;
     text-align: center;
-    color: hsl(0deg, 0%, 100%);
+    color: hsl(0, 0%, 100%);
   }
   .title .welcome {
     width: 50ch;
@@ -1106,7 +1106,7 @@ footer .mail a:hover {
   }
   .title .welcome p {
     font-size: clamp(0.5rem, 2vw + 0.2rem, 1.25rem);
-    color: hsl(193deg, 100%, 78%);
+    color: hsl(193, 100%, 78%);
     text-align: start;
     margin-bottom: 0;
   }
@@ -1261,20 +1261,20 @@ footer .mail a:hover {
     height: 50px;
     width: 50%;
     border-left: none;
-    border-top: 1px solid hsl(193deg, 100%, 78%);
+    border-top: 1px solid hsl(193, 100%, 78%);
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .language a {
     text-decoration: none;
-    color: hsl(193deg, 100%, 78%);
+    color: hsl(193, 100%, 78%);
     transition: all 0.3s ease-in;
     font-size: 1rem;
   }
   .language a a:hover,
   .language a a:focus {
-    color: hsl(164deg, 95%, 43%);
+    color: hsl(164, 95%, 43%);
     transform: translateY(-3px);
   }
   .hamburger {
@@ -1286,7 +1286,7 @@ footer .mail a:hover {
   .hamburger::after {
     width: 2rem;
     height: 3px;
-    background-color: hsl(164deg, 95%, 43%);
+    background-color: hsl(164, 95%, 43%);
     border-radius: 20px;
     transition: transform 400ms ease-in-out, opacity 200ms linear;
   }
@@ -1424,7 +1424,7 @@ footer .mail a:hover {
     justify-content: center;
   }
   .slider__container .slider-content .manual-btn {
-    border: 1px solid hsl(164deg, 95%, 43%);
+    border: 1px solid hsl(164, 95%, 43%);
     padding: 5px 10px;
     width: 20px;
     margin: 0 8px;
@@ -1433,7 +1433,7 @@ footer .mail a:hover {
     cursor: pointer;
   }
   .slider__container .slider-content .manual-btn:hover {
-    background-color: hsl(164deg, 95%, 43%);
+    background-color: hsl(164, 95%, 43%);
   }
   .slider__container .slider-content #radio1:checked ~ .item-1 {
     margin-left: 0;
@@ -1461,7 +1461,7 @@ footer .mail a:hover {
     justify-content: center;
   }
   .slider__container .slider-content .navigation-auto .auto-btn {
-    border: 1px solid hsl(164deg, 95%, 43%);
+    border: 1px solid hsl(164, 95%, 43%);
     padding: 5px 10px;
     width: 20px;
     margin: 0 8px;
@@ -1470,16 +1470,16 @@ footer .mail a:hover {
     cursor: pointer;
   }
   .slider__container .slider-content #radio1:checked ~ .navigation-auto .auto-btn1 {
-    background-color: hsl(164deg, 95%, 43%);
+    background-color: hsl(164, 95%, 43%);
   }
   .slider__container .slider-content #radio2:checked ~ .navigation-auto .auto-btn2 {
-    background-color: hsl(164deg, 95%, 43%);
+    background-color: hsl(164, 95%, 43%);
   }
   .slider__container .slider-content #radio3:checked ~ .navigation-auto .auto-btn3 {
-    background-color: hsl(164deg, 95%, 43%);
+    background-color: hsl(164, 95%, 43%);
   }
   .slider__container .slider-content #radio4:checked ~ .navigation-auto .auto-btn4 {
-    background-color: hsl(164deg, 95%, 43%);
+    background-color: hsl(164, 95%, 43%);
   }
   .arrow-wrapper {
     height: 30%;
@@ -1550,7 +1550,7 @@ footer .mail a:hover {
     font-weight: 500;
   }
   section.contact {
-    color: hsl(193deg, 100%, 78%);
+    color: hsl(193, 100%, 78%);
   }
   .contact {
     width: auto;
@@ -1614,8 +1614,8 @@ footer .mail a:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: 2px solid hsl(193deg, 100%, 78%);
-    color: hsl(193deg, 100%, 78%);
+    border-top: 2px solid hsl(193, 100%, 78%);
+    color: hsl(193, 100%, 78%);
   }
   footer .copyright {
     font-size: 0.6rem;
@@ -1625,10 +1625,10 @@ footer .mail a:hover {
     width: 20px;
     height: 20px;
     transition: all 0.3s ease-in;
-    fill: hsl(193deg, 100%, 78%);
+    fill: hsl(193, 100%, 78%);
   }
   footer .socials svg:hover, footer .socials svg:active {
-    fill: hsl(164deg, 95%, 43%);
+    fill: hsl(164, 95%, 43%);
     transform: translateY(-3px);
   }
   footer .mail {
